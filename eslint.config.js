@@ -1,20 +1,69 @@
+import js from '@eslint/js';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import vue from 'eslint-plugin-vue';
+import globals from 'globals';
 
 export default [
   {
-    files: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.vue'],
-    ignores: ['node_modules', 'dist'],
+    ignores: ['.nuxt/**', '.output/**', 'dist/**', 'node_modules/**']
+  },
+
+  js.configs.recommended,
+
+  ...vue.configs['flat/recommended'],
+
+  {
+    files: ['**/*.{js,cjs,mjs,ts,cts,mts,tsx,vue}'],
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'module'
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node
+      }
+    }
+  },
+
+  {
+    files: ['**/*.{ts,tsx,cts,mts}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      }
     },
     plugins: {
-      vue
+      '@typescript-eslint': tsPlugin
     },
     rules: {
-      semi: ['error', 'always'],
-      quotes: ['error', 'single'],
-      ...vue.configs['flat/recommended'].rules
+      ...tsPlugin.configs.recommended.rules
+    }
+  },
+
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        extraFileExtensions: ['.vue']
+      }
+    }
+  },
+
+  {
+    files: [
+      '**/*.{test,spec}.{js,ts,tsx}',
+      '**/__tests__/**/*.{js,ts,tsx}',
+      'app/components/**/*.test.ts'
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.vitest
+      }
     }
   }
 ];
