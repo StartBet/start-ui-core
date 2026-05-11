@@ -11,7 +11,10 @@ export default [
 
   js.configs.recommended,
 
-  ...vue.configs['flat/recommended'],
+  ...vue.configs['flat/recommended'].map((config) => ({
+    ...config,
+    files: ['**/*.vue']
+  })),
 
   {
     files: ['**/*.{js,cjs,mjs,ts,cts,mts,tsx,vue}'],

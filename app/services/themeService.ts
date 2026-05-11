@@ -1,33 +1,37 @@
-import { computed, onMounted } from 'vue'
+import { computed, onMounted } from 'vue';
+import { useState, useHead } from 'nuxt/app';
 
-export type AppTheme = 'dark' | 'light'
+export type AppTheme = 'dark' | 'light';
 
-const normalizeTheme = (value: unknown): AppTheme => (value === 'light' ? 'light' : 'dark')
+const normalizeTheme = (value: unknown): AppTheme =>
+  value === 'light' ? 'light' : 'dark';
 
 export function useThemeService() {
-  const theme = useState<AppTheme>('app-theme', () => 'dark')
+  const theme = useState<AppTheme>('app-theme', () => 'dark');
 
   useHead(() => ({
     htmlAttrs: {
       'data-theme': theme.value
     }
-  }))
+  }));
 
   const setTheme = (next: AppTheme) => {
-    theme.value = normalizeTheme(next)
-  }
+    theme.value = normalizeTheme(next);
+  };
 
   const syncFromDom = () => {
-    if (globalThis.document === undefined) return
-    theme.value = normalizeTheme(globalThis.document.documentElement.dataset.theme)
-  }
+    if (globalThis.document === undefined) return;
+    theme.value = normalizeTheme(
+      globalThis.document.documentElement.dataset.theme
+    );
+  };
 
   onMounted(() => {
-    syncFromDom()
-  })
+    syncFromDom();
+  });
 
-  const isDark = computed(() => theme.value === 'dark')
-  const isLight = computed(() => theme.value === 'light')
+  const isDark = computed(() => theme.value === 'dark');
+  const isLight = computed(() => theme.value === 'light');
 
-  return { theme, isDark, isLight, setTheme, syncFromDom }
+  return { theme, isDark, isLight, setTheme, syncFromDom };
 }
