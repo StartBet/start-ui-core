@@ -1,5 +1,7 @@
 <script setup lang="ts">
-useHead({ title: 'Cassino' })
+import { getTitle } from '~/utils/seo-snippets';
+
+useHead({ title: getTitle('Cassino') })
 </script>
 
 <template>

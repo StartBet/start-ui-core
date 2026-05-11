@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import AppCardActionGame from '~/components/domain/card-action-game/AppCardActionGame.vue';
+import { getTitle } from '~/utils/seo-snippets';
 
-useHead({ title: 'Buttons' })
+useHead({ title: getTitle('Principais Jogos') })
 
 </script>
 
