@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import type {
+  PaperBorder,
+  PaperBorderRadius,
+  PaperElevation,
+  PaperVariant
+} from '~/components/ui/paper/StPaper.interface'
+import type { SizeValue } from '~/types/Spacing'
+import { buildPaperClasses } from '~/components/ui/paper/styleStPaper'
+
+const props = withDefaults(
+  defineProps<{
+    variant?: PaperVariant
+    border?: PaperBorder
+    borderRadius?: PaperBorderRadius
+    elevation?: PaperElevation
+    interactive?: boolean
+    width?: SizeValue
+    height?: SizeValue
+    padding?: string
+    paddingSm?: string
+    paddingMd?: string
+    paddingLg?: string
+    margin?: string
+    marginSm?: string
+    marginMd?: string
+    marginLg?: string
+    className?: string
+    as?: string
+  }>(),
+  {
+    variant: 'surface-1',
+    border: 'none',
+    borderRadius: '1',
+    elevation: 1,
+    interactive: false,
+    className: '',
+    as: 'div'
+  }
+)
+
+const paperClasses = computed(() => buildPaperClasses(props))
+</script>
+
+<template>
+  <component :is="props.as" :class="paperClasses" v-bind="$attrs">
+    <slot />
+  </component>
+</template>

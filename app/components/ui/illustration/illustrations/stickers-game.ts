@@ -1,0 +1,86 @@
+export const STICKERS_GAME_ILLUSTRATIONS = {
+  'stickers-game/sticker-aviator': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-aviator.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-big-bass': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-big-bass.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-bull-lucky': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-bull-lucky.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-cash-mania': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-cash-mania.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-casino-roulette': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-casino-roulette.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-cats-blessing': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-cats-blessing.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-congo-cash': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-congo-cash.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-crab': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-crab.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-dancing-monkeys': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-dancing-monkeys.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-dog': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-dog.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-dragon-china': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-dragon-china.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-dragon': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-dragon.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-fortune-dragon': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-fortune-dragon.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-fortune-monkey': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-fortune-monkey.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-fortune-mouse': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-fortune-mouse.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-fortune-ox': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-fortune-ox.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-fortune-snake': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-fortune-snake.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-gate-of-olympus-1000': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-gate-of-olympus-1000.svg?raw').then(
+      (m) => m.default
+    ),
+  'stickers-game/sticker-gate-of-olympus': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-gate-of-olympus.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-jewelry': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-jewelry.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-joker': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-joker.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-legendary-sumo': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-legendary-sumo.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-little-panda': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-little-panda.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-lucky-jaguar': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-lucky-jaguar.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-medieval-soldier': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-medieval-soldier.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-old-west': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-old-west.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-piggy-gold': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-piggy-gold.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-rabbit': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-rabbit.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-reign-of-dragons': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-reign-of-dragons.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-sugar-rush-1000': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-sugar-rush-1000.svg?raw').then(
+      (m) => m.default
+    ),
+  'stickers-game/sticker-sugar-rush': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-sugar-rush.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-sweet-bonanza-1000': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-sweet-bonanza-1000.svg?raw').then(
+      (m) => m.default
+    ),
+  'stickers-game/sticker-sweet-bonanza': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-sweet-bonanza.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-tiger-lucky': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-tiger-lucky.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-wealthy-frog': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-wealthy-frog.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-wild-bandito': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-wild-bandito.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-wizzard': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-wizzard.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-women': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-women.svg?raw').then((m) => m.default),
+  'stickers-game/sticker-zeus': () =>
+    import('~~/assets/illustrations/stickers-game/sticker-zeus.svg?raw').then((m) => m.default)
+} as const

@@ -1,0 +1,495 @@
+@tailwind theme;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-100.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-100-italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-200.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-200-italic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-300.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-300-italic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-400.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-400-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-500-italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-600.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-600-italic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-700-italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-800.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-800-italic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-900.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Base Neue';
+    src: url('../fonts/base-neue/base-neue-900-italic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+
+  :root {
+    --brand-primary-100: #EFEBFC;
+    --brand-primary-200: #E0D9FB;
+    --brand-primary-300: #D7CFF8;
+    --brand-primary-400: #AD8FFF;
+    --brand-primary-500: #6C3CAD;
+    --brand-primary-600: #622DAA;
+    --brand-primary-700: #3F136D;
+    --brand-primary-800: #2F1557;
+    --brand-primary-900: #270644;
+    --brand-primary-950: #1D0533;
+
+    --brand-secondary-100: #E5FACD;
+    --brand-secondary-200: #CDF6A0;
+    --brand-secondary-300: #ACEE68;
+    --brand-secondary-400: #80DD24;
+    --brand-secondary-500: #6EC61C;
+    --brand-secondary-600: #5AA816;
+    --brand-secondary-700: #3F7D10;
+    --brand-secondary-800: #2E5C0C;
+    --brand-secondary-900: #1F3D08;
+    --brand-secondary-950: #142705;
+
+    --neutral-color-000: #FFFFFF;
+    --neutral-color-100: #F5F5F5;
+    --neutral-color-200: #E5E5E5;
+    --neutral-color-300: #D4D4D4;
+    --neutral-color-400: #A3A3A3;
+    --neutral-color-500: #737373;
+    --neutral-color-600: #525252;
+    --neutral-color-700: #404040;
+    --neutral-color-800: #262626;
+    --neutral-color-900: #171717;
+    --neutral-color-950: #0A0A0A;
+
+    --info-color-100: #CFFAFE;
+    --info-color-200: #A5F3FC;
+    --info-color-300: #67E8F9;
+    --info-color-400: #22D3EE;
+    --info-color-500: #06B6D4;
+    --info-color-600: #0891B2;
+    --info-color-700: #0E7490;
+    --info-color-800: #155E75;
+    --info-color-900: #164E63;
+    --info-color-950: #083344;
+
+    --system-color-100: #EAF0F1;
+    --system-color-200: #CBDADC;
+    --system-color-300: #A1BDC0;
+    --system-color-400: #789FA3;
+    --system-color-500: #54868B;
+    --system-color-600: #2F6C72;
+    --system-color-700: #29575C;
+    --system-color-800: #24474B;
+    --system-color-900: #223C3F;
+    --system-color-950: #11262A;
+
+    --positive-color-100: #A7F3CB;
+    --positive-color-200: #6DE8B0;
+    --positive-color-300: #3FDD94;
+    --positive-color-400: #1FCC77;
+    --positive-color-500: #0CAB58;
+    --positive-color-600: #0A8A49;
+    --positive-color-700: #086A39;
+    --positive-color-800: #064F2B;
+    --positive-color-900: #04351D;
+    --positive-color-950: #022113;
+
+    --attention-color-100: #FFF6BF;
+    --attention-color-200: #FFEA73;
+    --attention-color-300: #FFDA30;
+    --attention-color-400: #FEA900;
+    --attention-color-500: #DF7000;
+    --attention-color-600: #B65600;
+    --attention-color-700: #8A4100;
+    --attention-color-800: #6A3000;
+    --attention-color-900: #4A2100;
+    --attention-color-950: #2F1500;
+
+    --negative-color-100: #FFCBC9;
+    --negative-color-200: #FF9E9B;
+    --negative-color-300: #FF7F7A;
+    --negative-color-400: #FA746F;
+    --negative-color-500: #F1433C;
+    --negative-color-600: #D53630;
+    --negative-color-700: #AB2B26;
+    --negative-color-800: #82201C;
+    --negative-color-900: #5A1613;
+    --negative-color-950: #3A0E0C;
+
+    --shadow-scale-100: rgba(10, 0, 21, 0.04);
+    --shadow-scale-200: rgba(10, 0, 21, 0.08);
+    --shadow-scale-300: rgba(10, 0, 21, 0.16);
+    --shadow-scale-400: rgba(10, 0, 21, 0.24);
+    --shadow-scale-500: rgba(10, 0, 21, 0.32);
+    --shadow-scale-600: rgba(10, 0, 21, 0.4);
+    --shadow-scale-700: rgba(10, 0, 21, 0.48);
+    --shadow-scale-800: rgba(10, 0, 21, 0.56);
+    --shadow-scale-900: rgba(10, 0, 21, 0.64);
+    --shadow-scale-950: rgba(10, 0, 21, 0.72);
+
+    --light-scale-100: rgba(180, 124, 255, 0.04);
+    --light-scale-200: rgba(180, 124, 255, 0.08);
+    --light-scale-300: rgba(180, 124, 255, 0.16);
+    --light-scale-400: rgba(180, 124, 255, 0.24);
+    --light-scale-500: rgba(180, 124, 255, 0.32);
+    --light-scale-600: rgba(180, 124, 255, 0.4);
+    --light-scale-700: rgba(180, 124, 255, 0.48);
+    --light-scale-800: rgba(180, 124, 255, 0.56);
+    --light-scale-900: rgba(180, 124, 255, 0.64);
+    --light-scale-950: rgba(180, 124, 255, 0.72);
+
+    --bright-scale-100: rgba(255, 255, 255, 0.04);
+    --bright-scale-200: rgba(255, 255, 255, 0.08);
+    --bright-scale-300: rgba(255, 255, 255, 0.16);
+    --bright-scale-400: rgba(255, 255, 255, 0.24);
+    --bright-scale-500: rgba(255, 255, 255, 0.32);
+    --bright-scale-600: rgba(255, 255, 255, 0.4);
+    --bright-scale-700: rgba(255, 255, 255, 0.48);
+    --bright-scale-800: rgba(255, 255, 255, 0.56);
+    --bright-scale-900: rgba(255, 255, 255, 0.64);
+    --bright-scale-950: rgba(255, 255, 255, 0.72);
+
+    --din-scale-100: rgba(0, 0, 0, 0.04);
+    --din-scale-200: rgba(0, 0, 0, 0.08);
+    --din-scale-300: rgba(0, 0, 0, 0.16);
+    --din-scale-400: rgba(0, 0, 0, 0.24);
+    --din-scale-500: rgba(0, 0, 0, 0.32);
+    --din-scale-600: rgba(0, 0, 0, 0.4);
+    --din-scale-700: rgba(0, 0, 0, 0.48);
+    --din-scale-800: rgba(0, 0, 0, 0.56);
+    --din-scale-900: rgba(0, 0, 0, 0.64);
+    --din-scale-950: rgba(0, 0, 0, 0.72);
+
+    --blue-color-100: #DBEAFE;
+    --blue-color-200: #BFDBFE;
+    --blue-color-300: #93C5FD;
+    --blue-color-400: #60A5FA;
+    --blue-color-500: #3B82F6;
+    --blue-color-600: #2563EB;
+    --blue-color-700: #1D4ED8;
+    --blue-color-800: #1E40AF;
+    --blue-color-900: #1E3A8A;
+    --blue-color-950: #172554;
+
+    --ocean-color-100: #CFFAFE;
+    --ocean-color-200: #A5F3FC;
+    --ocean-color-300: #67E8F9;
+    --ocean-color-400: #22D3EE;
+    --ocean-color-500: #06B6D4;
+    --ocean-color-600: #0891B2;
+    --ocean-color-700: #0E7490;
+    --ocean-color-800: #155E75;
+    --ocean-color-900: #164E63;
+    --ocean-color-950: #083344;
+
+    --green-color-100: #DCFCE7;
+    --green-color-200: #BBF7D0;
+    --green-color-300: #86EFAC;
+    --green-color-400: #4ADE80;
+    --green-color-500: #22C55E;
+    --green-color-600: #16A34A;
+    --green-color-700: #15803D;
+    --green-color-800: #166534;
+    --green-color-900: #14532D;
+    --green-color-950: #052E16;
+
+    --yellow-color-100: #FEF9C3;
+    --yellow-color-200: #FEF08A;
+    --yellow-color-300: #FDE047;
+    --yellow-color-400: #FACC15;
+    --yellow-color-500: #EAB308;
+    --yellow-color-600: #CA8A04;
+    --yellow-color-700: #A16207;
+    --yellow-color-800: #854D0E;
+    --yellow-color-900: #713F12;
+    --yellow-color-950: #422006;
+
+    --orange-color-100: #FFEDD5;
+    --orange-color-200: #FED7AA;
+    --orange-color-300: #FDBA74;
+    --orange-color-400: #FB923C;
+    --orange-color-500: #F97316;
+    --orange-color-600: #EA580C;
+    --orange-color-700: #C2410C;
+    --orange-color-800: #9A3412;
+    --orange-color-900: #7C2D12;
+    --orange-color-950: #431407;
+
+    --red-color-100: #FEE2E2;
+    --red-color-200: #FECACA;
+    --red-color-300: #FCA5A5;
+    --red-color-400: #F87171;
+    --red-color-500: #EF4444;
+    --red-color-600: #DC2626;
+    --red-color-700: #B91C1C;
+    --red-color-800: #991B1B;
+    --red-color-900: #7F1D1D;
+    --red-color-950: #450A0A;
+
+    --pink-color-100: #FCE7F3;
+    --pink-color-200: #FBCFE8;
+    --pink-color-300: #F9A8D4;
+    --pink-color-400: #F472B6;
+    --pink-color-500: #EC4899;
+    --pink-color-600: #DB2777;
+    --pink-color-700: #BE185D;
+    --pink-color-800: #9D174D;
+    --pink-color-900: #831843;
+    --pink-color-950: #500724;
+
+    --purple-color-100: #F3E8FF;
+    --purple-color-200: #E9D5FF;
+    --purple-color-300: #D8B4FE;
+    --purple-color-400: #C084FC;
+    --purple-color-500: #A855F7;
+    --purple-color-600: #9333EA;
+    --purple-color-700: #7E22CE;
+    --purple-color-800: #6B21A8;
+    --purple-color-900: #581C87;
+    --purple-color-950: #3B0764;
+
+    --color-brand: var(--brand-primary-700);
+    --color-primary: var(--brand-primary-600);
+    --color-secondary: var(--brand-secondary-400);
+    --color-info: var(--info-color-500);
+    --color-system: var(--system-color-600);
+    --color-warning: var(--attention-color-300);
+    --color-positive: var(--positive-color-500);
+    --color-negative: var(--negative-color-500);
+
+    --color-surface-0: var(--neutral-color-000);
+    --color-surface-1: var(--brand-primary-100);
+    --color-surface-2: var(--brand-primary-200);
+    --color-surface-3: var(--brand-primary-300);
+    --color-surface-4: var(--brand-primary-300);
+
+    --color-surface-primary: var(--brand-primary-300);
+    --color-surface-secondary: var(--brand-secondary-300);
+    --color-surface-info: var(--info-color-100);
+    --color-surface-system: var(--system-color-200);
+    --color-surface-warning: var(--attention-color-200);
+    --color-surface-positive: var(--positive-color-200);
+    --color-surface-negative: var(--negative-color-200);
+
+    --color-content-default: var(--neutral-color-800);
+    --color-content-disable: var(--neutral-color-700);
+    --color-content-ghost: var(--neutral-color-400);
+    --color-content-bright: var(--neutral-color-000);
+    --color-content-din: var(--neutral-color-950);
+
+    --color-content-primary: var(--brand-primary-950);
+    --color-content-secondary: var(--brand-secondary-700);
+    --color-content-info: var(--info-color-700);
+    --color-content-system: var(--system-color-800);
+    --color-content-warning: var(--attention-color-800);
+    --color-content-positive: var(--positive-color-800);
+    --color-content-negative: var(--negative-color-900);
+
+    --color-border-1: var(--din-scale-700);
+    --color-border-2: var(--din-scale-800);
+    --color-border-3: var(--din-scale-900);
+
+    --color-focus: var(--purple-color-500);
+    --color-pressed: var(--shadow-scale-300);
+    --color-hover: var(--shadow-scale-200);
+
+    --color-shadow-0: var(--shadow-scale-100);
+    --color-shadow-1: var(--shadow-scale-200);
+    --color-shadow-2: var(--shadow-scale-300);
+    --color-shadow-3: var(--shadow-scale-400);
+  }
+
+  :root[data-theme='dark'] {
+    --color-brand: var(--brand-primary-700);
+    --color-primary: var(--brand-primary-600);
+    --color-secondary: var(--brand-secondary-400);
+    --color-info: var(--info-color-500);
+    --color-system: var(--system-color-600);
+    --color-warning: var(--attention-color-300);
+    --color-positive: var(--positive-color-500);
+    --color-negative: var(--negative-color-500);
+
+    --color-surface-0: var(--brand-primary-700);
+    --color-surface-1: var(--brand-primary-800);
+    --color-surface-2: var(--brand-primary-900);
+    --color-surface-3: var(--brand-primary-950);
+    --color-surface-4: var(--brand-primary-950);
+
+    --color-surface-primary: var(--brand-primary-950);
+    --color-surface-secondary: var(--brand-secondary-800);
+    --color-surface-info: var(--info-color-950);
+    --color-surface-system: var(--brand-primary-900);
+    --color-surface-warning: var(--attention-color-950);
+    --color-surface-positive: var(--positive-color-800);
+    --color-surface-negative: var(--negative-color-900);
+
+    --color-content-default: var(--neutral-color-100);
+    --color-content-disable: var(--neutral-color-200);
+    --color-content-ghost: var(--neutral-color-300);
+    --color-content-bright: var(--neutral-color-000);
+    --color-content-din: var(--neutral-color-950);
+
+    --color-content-primary: var(--brand-primary-100);
+    --color-content-secondary: var(--brand-secondary-300);
+    --color-content-info: var(--info-color-200);
+    --color-content-system: var(--system-color-300);
+    --color-content-warning: var(--attention-color-300);
+    --color-content-positive: var(--positive-color-400);
+    --color-content-negative: var(--negative-color-400);
+
+    --color-border-1: var(--bright-scale-700);
+    --color-border-2: var(--bright-scale-800);
+    --color-border-3: var(--bright-scale-900);
+
+    --color-focus: var(--purple-color-500);
+    --color-pressed: var(--light-scale-300);
+    --color-hover: var(--light-scale-200);
+
+    --color-shadow-0: var(--shadow-scale-500);
+    --color-shadow-1: var(--shadow-scale-600);
+    --color-shadow-2: var(--shadow-scale-700);
+    --color-shadow-3: var(--shadow-scale-800);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-surface-4);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-surface-1);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-0);;
+}
+
