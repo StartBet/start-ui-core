@@ -12,7 +12,9 @@
     "postinstall": "nuxt prepare",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky",
+    "commit": "cz"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -26,13 +28,26 @@
     "vue-router": "^5.0.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vitest/coverage-v8": "^4.1.5",
     "@vue/test-utils": "^2.4.10",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-vue": "^10.9.1",
     "happy-dom": "^20.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
     "prettier": "^3.8.3",
     "typescript": "^5.6.3",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
