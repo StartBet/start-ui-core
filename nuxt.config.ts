@@ -6,10 +6,7 @@ export default defineNuxtConfig({
   components: [{ path: '~/components', pathPrefix: false }],
   hooks: {
     'pages:extend'(pages) {
-      // Remove todas as páginas geradas automaticamente para evitar rotas duplicadas com a nova arquitetura
       pages.splice(0, pages.length);
-
-      // Adiciona as páginas manualmente
       pages.push(
         {
           name: 'home',

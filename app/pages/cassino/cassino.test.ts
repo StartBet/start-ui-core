@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { describe, it, expect, vi } from 'vitest';
-import Cassino from './cassino.vue';
+import { describe, expect, it, vi } from 'vitest';
 
-// Mocks
 vi.mock('nuxt/app', () => ({
   useHead: vi.fn()
 }));
+
+import Cassino from './cassino.vue';
 
 describe('Cassino Page', () => {
   it('renders correctly', () => {

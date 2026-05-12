@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { describe, it, expect, vi } from 'vitest';
-import Home from './home.vue';
+import { describe, expect, it, vi } from 'vitest';
 
-// Mocks
 vi.mock('nuxt/app', () => ({
   useHead: vi.fn()
 }));
+
+import Home from './home.vue';
 
 describe('Home Page', () => {
   it('renders correctly', () => {

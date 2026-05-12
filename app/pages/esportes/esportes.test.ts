@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { describe, it, expect, vi } from 'vitest';
-import Esportes from './esportes.vue';
+import { describe, expect, it, vi } from 'vitest';
 
-// Mocks
 vi.mock('nuxt/app', () => ({
   useHead: vi.fn()
 }));
+
+import Esportes from './esportes.vue';
 
 describe('Esportes Page', () => {
   it('renders correctly', () => {
