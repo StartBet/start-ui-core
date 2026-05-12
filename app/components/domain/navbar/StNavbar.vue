@@ -102,7 +102,7 @@ const compactEntries = computed<CompactEntry[]>(() => {
   <aside :class="[navbarAsideBaseClass, navbarAsideWidthClass(sideNav.isOpen)]">
     <StPaper
       variant="surface-0"
-      padding="0 2"
+      padding="0 1"
       height="full"
       borderRadius="none"
       :elevation="1"
