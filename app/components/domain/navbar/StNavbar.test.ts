@@ -19,7 +19,12 @@ describe('StNavbar', () => {
     setActivePinia(pinia);
 
     const wrapper = mount(StNavbar, {
-      global: { plugins: [pinia] }
+      global: {
+        plugins: [pinia],
+        stubs: {
+          StIcon: { template: '<span data-stub="StIcon" />' }
+        }
+      }
     });
 
     expect(wrapper.find('aside').exists()).toBe(true);
@@ -32,7 +37,12 @@ describe('StNavbar', () => {
     useSideNavStore().close();
 
     const wrapper = mount(StNavbar, {
-      global: { plugins: [pinia] }
+      global: {
+        plugins: [pinia],
+        stubs: {
+          StIcon: { template: '<span data-stub="StIcon" />' }
+        }
+      }
     });
 
     expect(wrapper.find('button[aria-label="Cassino"]').exists()).toBe(true);

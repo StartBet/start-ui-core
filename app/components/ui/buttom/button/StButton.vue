@@ -1,28 +1,33 @@
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
-import type { ButtonColor, ButtonSize, ButtonVariant } from '~/components/ui/buttom/button/StButton.interface'
-import { buildButtonClasses } from '~/components/ui/buttom/button/styleStButton'
+import { computed, useSlots } from 'vue';
+import StIcon from '~/components/ui/icon/StIcon.vue';
+import type {
+  ButtonColor,
+  ButtonSize,
+  ButtonVariant
+} from '~/components/ui/buttom/button/StButton.interface';
+import { buildButtonClasses } from '~/components/ui/buttom/button/styleStButton';
 
-const slots = useSlots()
+const slots = useSlots();
 
 defineSlots<{
-  startAdornment?: () => unknown
-  default?: () => unknown
-  endAdornment?: () => unknown
-}>()
+  startAdornment?: () => unknown;
+  default?: () => unknown;
+  endAdornment?: () => unknown;
+}>();
 
 const props = withDefaults(
   defineProps<{
-    variant?: ButtonVariant
-    size?: ButtonSize
-    color?: ButtonColor
-    fullWidth?: boolean
-    type?: 'button' | 'submit' | 'reset'
-    value?: string | number
-    iconLeft?: string
-    iconRight?: string
-    disabled?: boolean
-    className?: string
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    color?: ButtonColor;
+    fullWidth?: boolean;
+    type?: 'button' | 'submit' | 'reset';
+    value?: string | number;
+    iconLeft?: string;
+    iconRight?: string;
+    disabled?: boolean;
+    className?: string;
   }>(),
   {
     variant: 'solid',
@@ -33,20 +38,20 @@ const props = withDefaults(
     disabled: false,
     className: ''
   }
-)
+);
 
 const hasSlotContent = (slot?: (() => unknown) | undefined) => {
-  const nodes = (slot?.() as any[]) ?? []
+  const nodes = (slot?.() as any[]) ?? [];
   return nodes.some((node) => {
-    const children = node?.children
-    if (typeof children === 'string') return children.trim().length > 0
-    return true
-  })
-}
+    const children = node?.children;
+    if (typeof children === 'string') return children.trim().length > 0;
+    return true;
+  });
+};
 
-const hasDefaultSlot = computed(() => hasSlotContent(slots.default))
-const hasStartAdornment = computed(() => hasSlotContent(slots.startAdornment))
-const hasEndAdornment = computed(() => hasSlotContent(slots.endAdornment))
+const hasDefaultSlot = computed(() => hasSlotContent(slots.default));
+const hasStartAdornment = computed(() => hasSlotContent(slots.startAdornment));
+const hasEndAdornment = computed(() => hasSlotContent(slots.endAdornment));
 
 const adornmentCount = computed(() => {
   return (
@@ -54,17 +59,25 @@ const adornmentCount = computed(() => {
     Number(Boolean(props.iconLeft)) +
     Number(hasEndAdornment.value) +
     Number(Boolean(props.iconRight))
-  )
-})
+  );
+});
 
-const isIconOnly = computed(() => !hasDefaultSlot.value && adornmentCount.value === 1)
+const isIconOnly = computed(
+  () => !hasDefaultSlot.value && adornmentCount.value === 1
+);
 
-const iconSize = computed(() => (props.size === 'large' ? 3 : 2))
+const iconSize = computed(() => (props.size === 'large' ? 3 : 2));
 
-const iconLeftAriaLabel = computed(() => (isIconOnly.value ? 'icon' : 'icon-left'))
-const iconRightAriaLabel = computed(() => (isIconOnly.value ? 'icon' : 'icon-right'))
+const iconLeftAriaLabel = computed(() =>
+  isIconOnly.value ? 'icon' : 'icon-left'
+);
+const iconRightAriaLabel = computed(() =>
+  isIconOnly.value ? 'icon' : 'icon-right'
+);
 
-const classes = computed(() => buildButtonClasses({ ...props, isIconOnly: isIconOnly.value }))
+const classes = computed(() =>
+  buildButtonClasses({ ...props, isIconOnly: isIconOnly.value })
+);
 </script>
 
 <template>
@@ -75,11 +88,10 @@ const classes = computed(() => buildButtonClasses({ ...props, isIconOnly: isIcon
     :class="[classes.container, 'focus:outline-none']"
     v-bind="$attrs"
   >
-  <span v-if="hasStartAdornment" class="ml-2 inline-flex">
-    <slot name="startAdornment" />
-  </span>
+    <span v-if="hasStartAdornment" class="ml-2 inline-flex">
+      <slot name="startAdornment" />
+    </span>
     <span :class="classes.content">
-
       <StIcon
         v-if="props.iconLeft"
         :name="props.iconLeft"
@@ -95,7 +107,6 @@ const classes = computed(() => buildButtonClasses({ ...props, isIconOnly: isIcon
         :size="iconSize"
         :aria-label="iconRightAriaLabel"
       />
-
     </span>
     <span v-if="hasEndAdornment" class="mr-2 inline-flex">
       <slot name="endAdornment" />
