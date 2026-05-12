@@ -12,8 +12,7 @@ export default defineConfig({
   },
   plugins: [
     tsconfigPaths({
-      projects: ['./tsconfig.json'],
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.vue']
+      projects: ['./tsconfig.json']
     }),
     vue()
   ],
