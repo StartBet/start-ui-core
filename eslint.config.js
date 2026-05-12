@@ -58,6 +58,7 @@ export default [
     },
     rules: {
       'no-undef': 'off',
+      'vue/multi-word-component-names': 'off',
       'vue/attribute-hyphenation': 'off',
       'vue/html-closing-bracket-spacing': 'off',
       'vue/html-self-closing': 'off',
