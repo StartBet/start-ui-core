@@ -1,17 +1,20 @@
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
+
 export const useSideNavStore = defineStore('side-nav', () => {
-  const isOpen = ref(true)
+  const isOpen = ref(true);
 
   const open = () => {
-    isOpen.value = true
-  }
+    isOpen.value = true;
+  };
 
   const close = () => {
-    isOpen.value = false
-  }
+    isOpen.value = false;
+  };
 
   const toggle = () => {
-    isOpen.value = !isOpen.value
-  }
+    isOpen.value = !isOpen.value;
+  };
 
-  return { isOpen, open, close, toggle }
-})
+  return { isOpen, open, close, toggle };
+});
