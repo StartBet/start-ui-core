@@ -10,7 +10,7 @@ vi.mock('nuxt/app', () => ({
   navigateTo: vi.fn()
 }));
 
-import StNavbar from '~/components/ui/navbar/StNavbar.vue';
+import StNavbar from '~/components/domain/navbar/StNavbar.vue';
 import { useSideNavStore } from '~/stores/sideNavStore';
 
 describe('StNavbar', () => {

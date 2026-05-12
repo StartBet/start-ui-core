@@ -12,7 +12,7 @@ import StTooltip from '~/components/ui/tooltip/StTooltip.vue';
 import {
   navbarAsideBaseClass,
   navbarAsideWidthClass
-} from '~/components/ui/navbar/styleStNavbar';
+} from '~/components/domain/navbar/styleStNavbar';
 import { useSideNavService } from '~/services/sideNavService';
 import { useSideNavMenuStore } from '~/stores/sideNavMenuStore';
 import { useSideNavStore } from '~/stores/sideNavStore';

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppHeaderNav from '~/components/domain/header/AppHeaderNav.vue';
-import StNavbar from '~/components/ui/navbar/StNavbar.vue';
+import StNavbar from '~/components/domain/navbar/StNavbar.vue';
 </script>
 
 <template>

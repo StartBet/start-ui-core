@@ -1,4 +1,4 @@
-import type { StNavbarItem } from '~/components/ui/navbar/StNavbar.interface';
+import type { StNavbarItem } from '~/components/domain/navbar/StNavbar.interface';
 
 const sideNavItems: StNavbarItem[] = [
   {
