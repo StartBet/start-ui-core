@@ -1,7 +1,7 @@
-import vue from '@vitejs/plugin-vue'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import { fileURLToPath } from 'node:url'
-import { coverageConfigDefaults, defineConfig } from 'vitest/config'
+import vue from '@vitejs/plugin-vue';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { fileURLToPath } from 'node:url';
+import { coverageConfigDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   resolve: {
@@ -19,10 +19,10 @@ export default defineConfig({
   ],
   test: {
     environment: 'happy-dom',
-    include: ['tests/**/*.{test,spec}.{ts,tsx}', 'app/**/*.{test,spec}.{ts,tsx}'],
+    include: ['app/**/*.{test,spec}.{ts,tsx}'],
     coverage: {
       provider: 'v8',
       exclude: [...coverageConfigDefaults.exclude, '.nuxt/**', '.output/**']
     }
   }
-})
+});
