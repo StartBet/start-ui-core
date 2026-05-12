@@ -3,10 +3,6 @@ import { createPinia, setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ref } from 'vue';
 
-vi.mock('vue-router', () => ({
-  useRoute: () => ({ path: '/cassino' })
-}));
-
 vi.mock('nuxt/app', () => ({
   navigateTo: vi.fn()
 }));

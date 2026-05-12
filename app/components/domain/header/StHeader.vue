@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { navigateTo } from 'nuxt/app';
 import StBadge from '~/components/ui/badge/StBadge.vue';
 import StButton from '~/components/ui/buttom/button/StButton.vue';
 import StGrid from '~/components/ui/grid/StGrid.vue';
 import StIllustration from '~/components/ui/illustration/StIllustration.vue';
-import StListItem from '~/components/ui/list/list-item/StListItem.vue';
-import StUnorderedList from '~/components/ui/list/unordered-list/StUnorderedList.vue';
 import StPaper from '~/components/ui/paper/StPaper.vue';
 import StTooltip from '~/components/ui/tooltip/StTooltip.vue';
 import { useThemeService } from '~/services/themeService';
@@ -16,13 +12,7 @@ import { stHeaderRootClass } from '~/components/domain/header/styleStHeader';
 
 defineOptions({ name: 'StHeader' });
 
-const route = useRoute();
 const sideNav = useSideNavStore();
-
-const items = [
-  { label: 'Cassino', to: '/cassino' },
-  { label: 'Esportes', to: '/esportes' }
-] as const;
 
 const { theme } = useThemeService();
 
@@ -44,8 +34,8 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
       :elevation="0"
       borderRadius="none"
     >
-      <StGrid cols="2" smCols="2" mdCols="2" gap="4" padding="2">
-        <div class="flex items-center justify-start gap-ds-2">
+      <StGrid gap="4" className="grid-cols-[1fr_auto]">
+        <div class="flex items-center justify-start p-ds-1 gap-ds-2">
           <StButton
             variant="text"
             :color="menuVariant"
@@ -78,26 +68,34 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
             </template>
             Promoções
           </StTooltip>
-          <StUnorderedList
-            orientation="horizontal"
-            dense
-            className="hidden md:flex"
-          >
-            <StListItem
-              v-for="item in items"
-              :key="item.to"
-              clickable
-              size="medium"
-              :selected="route.path === item.to"
-              :onClick="() => navigateTo(item.to)"
-            >
-              {{ item.label }}
-            </StListItem>
-          </StUnorderedList>
         </div>
-        <div class="flex items-center justify-end gap-ds-2">
-          <StButton variant="outline">Entrar</StButton>
-          <StButton variant="solid" color="secondary">Cadastrar</StButton>
+        <div
+          class="flex items-center justify-end gap-ds-2 p-ds-2 bg-surface-2 rounded-tl-ds-2 rounded-bl-ds-2"
+        >
+          <StButton variant="outline" className="hidden md:block"
+            >Entrar</StButton
+          >
+          <StButton
+            variant="solid"
+            color="secondary"
+            className="hidden md:block"
+            >Cadastrar</StButton
+          >
+          <StButton
+            variant="outline"
+            iconLeft="right-to-bracket"
+            aria-label="Entrar"
+            size="small"
+            className="block md:hidden"
+          />
+          <StButton
+            variant="solid"
+            color="secondary"
+            iconLeft="user-plus"
+            aria-label="Cadastrar"
+            size="small"
+            className="block md:hidden"
+          />
         </div>
       </StGrid>
     </StPaper>
