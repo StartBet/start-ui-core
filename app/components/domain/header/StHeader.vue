@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { navigateTo } from 'nuxt/app';
 import StBadge from '~/components/ui/badge/StBadge.vue';
 import StButton from '~/components/ui/buttom/button/StButton.vue';
 import StGrid from '~/components/ui/grid/StGrid.vue';
@@ -8,30 +10,40 @@ import StListItem from '~/components/ui/list/list-item/StListItem.vue';
 import StUnorderedList from '~/components/ui/list/unordered-list/StUnorderedList.vue';
 import StPaper from '~/components/ui/paper/StPaper.vue';
 import StTooltip from '~/components/ui/tooltip/StTooltip.vue';
-import { useThemeService } from '~/services/themeService'
-import { useSideNavStore } from '~/stores/sideNavStore'
+import { useThemeService } from '~/services/themeService';
+import { useSideNavStore } from '~/stores/sideNavStore';
+import { stHeaderRootClass } from '~/components/domain/header/styleStHeader';
 
-const route = useRoute()
-const sideNav = useSideNavStore()
+defineOptions({ name: 'StHeader' });
+
+const route = useRoute();
+const sideNav = useSideNavStore();
 
 const items = [
   { label: 'Cassino', to: '/cassino' },
   { label: 'Esportes', to: '/esportes' }
-] as const
+] as const;
 
-const { theme } = useThemeService()
+const { theme } = useThemeService();
 
 const brandIllustrationName = computed(() =>
   theme.value === 'light' ? 'brand/brand-light' : 'brand/brand-dark'
-)
+);
 
-const menuAriaLabel = computed(() => (sideNav.isOpen ? 'Fechar menu' : 'Abrir menu'))
-const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'))
+const menuAriaLabel = computed(() =>
+  sideNav.isOpen ? 'Fechar menu' : 'Abrir menu'
+);
+const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
 </script>
 
 <template>
-  <header class=" flex items-center justify-between gap-ds-4 z-[200]">
-    <StPaper variant="surface-0" width="full" :elevation="0" borderRadius="none" >
+  <header :class="stHeaderRootClass">
+    <StPaper
+      variant="surface-0"
+      width="full"
+      :elevation="0"
+      borderRadius="none"
+    >
       <StGrid cols="2" smCols="2" mdCols="2" gap="4" padding="2">
         <div class="flex items-center justify-start gap-ds-2">
           <StButton
@@ -42,18 +54,35 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'))
             @click="sideNav.toggle"
           />
           <NuxtLink to="/" aria-label="Home">
-            <StIllustration :name="brandIllustrationName" alt="Brand" height="3" />
+            <StIllustration
+              :name="brandIllustrationName"
+              alt="Brand"
+              height="3"
+            />
           </NuxtLink>
           <StTooltip placement="bottom">
             <template #trigger>
               <span class="relative inline-flex">
-                <StButton variant="text" color="secondary" iconLeft="Gift" aria-label="Promoções" />
-                <StBadge variant="negative" pulse className="absolute -right-[-6px] -top-[4px]" />
+                <StButton
+                  variant="text"
+                  color="secondary"
+                  iconLeft="Gift"
+                  aria-label="Promoções"
+                />
+                <StBadge
+                  variant="negative"
+                  pulse
+                  className="absolute -right-[-6px] -top-[4px]"
+                />
               </span>
             </template>
             Promoções
           </StTooltip>
-          <StUnorderedList orientation="horizontal" dense className="hidden md:flex">
+          <StUnorderedList
+            orientation="horizontal"
+            dense
+            className="hidden md:flex"
+          >
             <StListItem
               v-for="item in items"
               :key="item.to"
@@ -68,9 +97,7 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'))
         </div>
         <div class="flex items-center justify-end gap-ds-2">
           <StButton variant="outline">Entrar</StButton>
-          <StButton variant="solid" color="secondary">
-            Cadastrar
-          </StButton>
+          <StButton variant="solid" color="secondary">Cadastrar</StButton>
         </div>
       </StGrid>
     </StPaper>
