@@ -1,0 +1,7 @@
+export const defaultLayoutRootClass =
+  'flex h-screen flex-col overflow-hidden bg-surface-4 text-content-default';
+
+export const defaultLayoutShellClass =
+  'flex min-h-0 flex-1 overflow-hidden flex-row relative';
+
+export const defaultLayoutMainClass = 'min-h-0 min-w-0 flex-1 overflow-y-auto';
