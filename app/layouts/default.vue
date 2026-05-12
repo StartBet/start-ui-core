@@ -10,7 +10,7 @@ import StNavbar from '~/components/domain/navbar/StNavbar.vue';
     <StHeader />
     <div class="flex min-h-0 flex-1 overflow-hidden flex-row relative">
       <StNavbar />
-      <main class="min-h-0 min-w-0 flex-1 overflow-y-auto px-ds-4">
+      <main class="min-h-0 min-w-0 flex-1 overflow-y-auto">
         <slot />
       </main>
     </div>

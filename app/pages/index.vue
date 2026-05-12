@@ -5,7 +5,7 @@ useHead({ title: getTitle('Principais Jogos') });
 </script>
 
 <template>
-  <div class="space-y-ds-6">
+  <div class="space-y-ds-6 px-ds-4">
     <StPaper
       variant="surface-4"
       padding="none"
