@@ -1,6 +1,6 @@
-import type { SideNavItem } from '~/components/domain/navbar/AppSideNav.interface';
+import type { StNavbarItem } from '~/components/ui/navbar/StNavbar.interface';
 
-const sideNavItems: SideNavItem[] = [
+const sideNavItems: StNavbarItem[] = [
   {
     id: 'cassino',
     label: 'Cassino',
