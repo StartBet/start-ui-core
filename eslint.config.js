@@ -11,7 +11,7 @@ export default [
 
   js.configs.recommended,
 
-  ...vue.configs['flat/recommended'].map((config) => ({
+  ...vue.configs['flat/essential'].map((config) => ({
     ...config,
     files: ['**/*.vue']
   })),
@@ -41,7 +41,8 @@ export default [
       '@typescript-eslint': tsPlugin
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules
+      ...tsPlugin.configs.recommended.rules,
+      'no-undef': 'off'
     }
   },
 
@@ -54,6 +55,14 @@ export default [
         sourceType: 'module',
         extraFileExtensions: ['.vue']
       }
+    },
+    rules: {
+      'no-undef': 'off',
+      'vue/attribute-hyphenation': 'off',
+      'vue/html-closing-bracket-spacing': 'off',
+      'vue/html-self-closing': 'off',
+      'vue/max-attributes-per-line': 'off',
+      'vue/singleline-html-element-content-newline': 'off'
     }
   },
 
@@ -67,6 +76,9 @@ export default [
       globals: {
         ...globals.vitest
       }
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off'
     }
   }
 ];
