@@ -1,7 +1,11 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./app/**/*.{vue,js,ts}', './tailwind.config.{js,ts}', './nuxt.config.{js,ts}'],
+  content: [
+    './app/**/*.{vue,js,ts}',
+    './tailwind.config.{js,ts}',
+    './nuxt.config.{js,ts}'
+  ],
   safelist: [
     { pattern: /rounded-ds-(?:1|2)/ },
     { pattern: /shadow-paper-[0-4]/ },
@@ -17,13 +21,34 @@ export default {
     { pattern: /pr-(?:0|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
     { pattern: /pb-(?:0|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
     { pattern: /pl-(?:0|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /m-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /mx-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /my-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /mt-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /mr-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /mb-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] },
-    { pattern: /ml-(?:0|auto|ds-(?:[1-9]|1[0-2]))/, variants: ['sm', 'md', 'lg'] }
+    {
+      pattern: /m-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /mx-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /my-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /mt-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /mr-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /mb-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    },
+    {
+      pattern: /ml-(?:0|auto|ds-(?:[1-9]|1[0-2]))/,
+      variants: ['sm', 'md', 'lg']
+    }
   ],
   theme: {
     extend: {
@@ -295,7 +320,7 @@ export default {
       },
       fontFamily: {
         heading: ['"Base Neue"', 'sans-serif'],
-        highlight: ['"Montserrat"', 'sans-serif'],
+        highlight: ['"Base Neue"', 'sans-serif'],
         body: ['Montserrat', 'sans-serif']
       },
       fontSize: {
@@ -309,8 +334,10 @@ export default {
         'ds-3xl': '2.25rem',
         'ds-4xl': '3rem',
         'ds-5xl': '3.75rem',
-        'heading-1': ['3rem',
-          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'heading-1': [
+          '3rem',
+          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }
+        ],
         'heading-2': [
           '2.25rem',
           { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }
@@ -319,16 +346,30 @@ export default {
           '1.875rem',
           { lineHeight: '1.25', letterSpacing: '-0.025em', fontWeight: '600' }
         ],
-        'heading-4': ['1.5rem',
-          { lineHeight: '1.25', letterSpacing: '0', fontWeight: '600' }],
-        'highlight-large': ['1.5rem', { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }],
+        'heading-4': [
+          '1.5rem',
+          { lineHeight: '1.25', letterSpacing: '0', fontWeight: '600' }
+        ],
+        'highlight-large': [
+          '1.5rem',
+          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
+        ],
         'highlight-medium': [
           '1.125rem',
           { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
         ],
-        'body-large': ['1.125rem', { lineHeight: '1.75', letterSpacing: '0', fontWeight: '400' }],
-        'body-medium': ['1rem', { lineHeight: '1.75', letterSpacing: '0', fontWeight: '400' }],
-        'body-small': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }]
+        'body-large': [
+          '1.125rem',
+          { lineHeight: '1.75', letterSpacing: '0', fontWeight: '400' }
+        ],
+        'body-medium': [
+          '1rem',
+          { lineHeight: '1.75', letterSpacing: '0', fontWeight: '400' }
+        ],
+        'body-small': [
+          '0.875rem',
+          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
+        ]
       },
       lineHeight: {
         'ds-tight': '1.1',
@@ -349,10 +390,25 @@ export default {
       },
       boxShadow: {
         'paper-0': '0 0 0 0 transparent',
-        'paper-1': '0 1px 3px 0 var(--color-shadow-0), 0 1px 2px 0 var(--color-shadow-1)',
-        'paper-2': '0 4px 6px -1px var(--color-shadow-0), 0 2px 4px -1px var(--color-shadow-1)',
-        'paper-3': '0 10px 15px -3px var(--color-shadow-0), 0 4px 6px -2px var(--color-shadow-1)',
-        'paper-4': '0 20px 25px -5px var(--color-shadow-0), 0 10px 10px -5px var(--color-shadow-1)'
+        'paper-1':
+          '0 1px 3px 0 var(--color-shadow-0), 0 1px 2px 0 var(--color-shadow-1)',
+        'paper-2':
+          '0 4px 6px -1px var(--color-shadow-0), 0 2px 4px -1px var(--color-shadow-1)',
+        'paper-3':
+          '0 10px 15px -3px var(--color-shadow-0), 0 4px 6px -2px var(--color-shadow-1)',
+        'paper-4':
+          '0 20px 25px -5px var(--color-shadow-0), 0 10px 10px -5px var(--color-shadow-1)',
+        'directed-0': '0 0 0 0 transparent',
+        'directed-1':
+          '0 1px 3px 0 var(--color-shadow-0), 0 1px 2px 0 var(--color-shadow-1)',
+        'directed-2':
+          '0 4px 6px -1px var(--color-shadow-0), 0 2px 4px -1px var(--color-shadow-1)',
+        'directed-3':
+          '0 10px 15px -3px var(--color-shadow-0), 0 4px 6px -2px var(--color-shadow-1)',
+        'directed-4':
+          '0 20px 25px -5px var(--color-shadow-0), 0 10px 10px -5px var(--color-shadow-1)',
+        'action-hover': '0 0 16px 2px var(--color-shadow-hover)',
+        'action-pressed': '0 0 16px 4px var(--color-shadow-pressed)'
       },
       spacing: {
         'ds-1': '8px',
@@ -388,22 +444,22 @@ export default {
       textShadow: {
         'ds-small': '-1px 1px transparent, -2px 2px var(--light-scale-700)',
         'ds-medium': '-1px 1px transparent, -3px 3px var(--light-scale-700)',
-        'ds-large': '-2px 2px transparent, -4px 4px var(--light-scale-700)',
-      },
+        'ds-large': '-2px 2px transparent, -4px 4px var(--light-scale-700)'
+      }
     }
   },
   plugins: [
     function ({ addUtilities, theme }) {
-      const shadows = theme('textShadow')
+      const shadows = theme('textShadow');
       const utilities = Object.entries(shadows).map(([key, value]) => {
         return {
           [`.text-shadow-${key}`]: {
-            textShadow: value,
-          },
-        }
-      })
+            textShadow: value
+          }
+        };
+      });
 
-      addUtilities(utilities)
-    },
+      addUtilities(utilities);
+    }
   ]
-} satisfies Config
+} satisfies Config;
