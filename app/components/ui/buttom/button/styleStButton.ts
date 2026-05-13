@@ -3,54 +3,59 @@ import type {
   ButtonColor,
   ButtonSize,
   ButtonVariant
-} from '~/components/ui/buttom/button/StButton.interface'
+} from '~/components/ui/buttom/button/StButton.interface';
+import { interactionsHoverPressed } from '~/utils/compositions';
 
-const sizeClasses: Record<ButtonSize, { container: string; iconOnly: string; contentPadding: string }> =
-  {
-    small: { container: 'h-8 text-ds-sm', iconOnly: 'w-8 px-0', contentPadding: 'px-ds-2' },
-    medium: { container: 'h-10 text-ds-base', iconOnly: 'w-10 px-0', contentPadding: 'px-ds-2' },
-    large: { container: 'h-12 text-ds-md', iconOnly: 'w-12 px-0', contentPadding: 'px-ds-2' }
+const sizeClasses: Record<
+  ButtonSize,
+  { container: string; iconOnly: string; contentPadding: string }
+> = {
+  small: {
+    container: 'h-8 text-ds-sm',
+    iconOnly: 'w-8 px-0',
+    contentPadding: 'px-ds-2'
+  },
+  medium: {
+    container: 'h-10 text-ds-base',
+    iconOnly: 'w-10 px-0',
+    contentPadding: 'px-ds-2'
+  },
+  large: {
+    container: 'h-12 text-ds-md',
+    iconOnly: 'w-12 px-0',
+    contentPadding: 'px-ds-2'
   }
-
+};
 
 const solidClasses: Record<ButtonColor, string> = {
-  primary:
-    'bg-primary text-content-bright border border-primary hover:opacity-90 active:opacity-80',
-  secondary:
-    'bg-secondary text-brand border border-content-secondary hover:opacity-90 active:opacity-80',
-  positive:
-    'bg-positive text-content-din border border-content-positive hover:opacity-90 active:opacity-80',
-  negative:
-    'bg-negative text-content-bright border border-content-negative hover:opacity-90 active:opacity-80'
-}
+  primary: 'bg-primary text-content-bright border border-transparent',
+  secondary: 'bg-secondary text-brand border border-transparent',
+  positive: 'bg-positive text-content-din border border-transparent',
+  negative: 'bg-negative text-content-bright border border-transparent'
+};
 
 const outlineClasses: Record<ButtonColor, string> = {
-  primary:
-    'bg-transparent text-content-primary border border-content-primary hover:bg-hover active:bg-pressed',
+  primary: 'bg-transparent text-content-primary border border-content-primary',
   secondary:
-    'bg-transparent text-content-secondary border border-content-secondary hover:bg-hover active:bg-pressed',
+    'bg-transparent text-content-secondary border border-content-secondary',
   positive:
-    'bg-transparent text-content-positive border border-content-positive hover:bg-hover active:bg-pressed',
+    'bg-transparent text-content-positive border border-content-positive',
   negative:
-    'bg-transparent text-content-negative border border-content-negative hover:bg-hover active:bg-pressed'
-}
+    'bg-transparent text-content-negative border border-content-negative'
+};
 
 const textClasses: Record<ButtonColor, string> = {
-  primary:
-    'bg-transparent text-content-primary border border-transparent hover:bg-hover active:bg-pressed',
-  secondary:
-    'bg-transparent text-content-secondary border border-transparent hover:bg-hover active:bg-pressed',
-  positive:
-    'bg-transparent text-content-positive border border-transparent hover:bg-hover active:bg-pressed',
-  negative:
-    'bg-transparent text-content-negative border border-transparent hover:bg-hover active:bg-pressed'
-}
+  primary: 'bg-transparent text-content-primary border border-transparent',
+  secondary: 'bg-transparent text-content-secondary border border-transparent',
+  positive: 'bg-transparent text-content-positive border border-transparent',
+  negative: 'bg-transparent text-content-negative border border-transparent'
+};
 
 const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
   solid: solidClasses,
   outline: outlineClasses,
   text: textClasses
-}
+};
 
 export const buildButtonClasses = (
   props: ButtonClassProps & { isIconOnly?: boolean }
@@ -63,21 +68,21 @@ export const buildButtonClasses = (
     fullWidth = false,
     isIconOnly = false,
     className
-  } = props
+  } = props;
 
   const base = [
-    'relative inline-flex items-center overflow-hidden rounded-ds-1 font-body font-semibold transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-0 disabled:cursor-not-allowed',
+    'inline-flex items-center rounded-ds-1 font-body font-semibold transition-all duration-200 ease-in-out disabled:cursor-not-allowed',
+    'outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
     isIconOnly ? 'justify-center' : 'justify-between',
+    interactionsHoverPressed
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 
-
-
-  const s = sizeClasses[size]
+  const s = sizeClasses[size];
 
   const disabledClasses =
-    'bg-surface-3 text-content-disable border border-border-2 cursor-not-allowed opacity-80'
+    'bg-surface-3 text-content-disable border border-border-2 cursor-not-allowed opacity-80';
 
   const container = [
     base,
@@ -88,14 +93,14 @@ export const buildButtonClasses = (
     className
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 
   const content = [
-    'relative z-10 inline-flex items-center gap-ds-1',
+    'relative z-20 inline-flex items-center gap-ds-1',
     isIconOnly ? 'px-0' : s.contentPadding
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 
-  return { container, content }
-}
+  return { container, content };
+};
