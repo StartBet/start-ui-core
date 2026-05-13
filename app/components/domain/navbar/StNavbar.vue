@@ -102,11 +102,11 @@ const compactEntries = computed<CompactEntry[]>(() => {
   <aside :class="[navbarAsideBaseClass, navbarAsideWidthClass(sideNav.isOpen)]">
     <StPaper
       variant="surface-0"
-      padding="0 1"
+      padding="2 1"
       height="full"
       borderRadius="none"
       :elevation="1"
-      className="overflow-y-auto"
+      className="overflow-y-auto border-r border-border-1"
     >
       <div v-show="visibleUnorderedList">
         <StUnorderedList>

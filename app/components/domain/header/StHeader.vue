@@ -33,6 +33,7 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
       width="full"
       :elevation="0"
       borderRadius="none"
+      className="border-b border-border-1"
     >
       <StGrid gap="4" className="grid-cols-[1fr_auto]">
         <div class="flex items-center justify-start p-ds-1 gap-ds-2">
@@ -72,17 +73,21 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
         <div
           class="flex items-center justify-end gap-ds-2 p-ds-2 bg-surface-2 rounded-tl-ds-2 rounded-bl-ds-2"
         >
-          <StButton variant="outline" className="hidden md:block"
+          <StButton
+            variant="text"
+            iconLeft="right-to-bracket"
+            className="hidden md:block"
             >Entrar</StButton
           >
           <StButton
             variant="solid"
             color="secondary"
+            iconLeft="user-plus"
             className="hidden md:block"
             >Cadastrar</StButton
           >
           <StButton
-            variant="outline"
+            variant="text"
             iconLeft="right-to-bracket"
             aria-label="Entrar"
             size="small"
