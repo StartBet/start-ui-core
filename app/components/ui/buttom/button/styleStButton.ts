@@ -35,13 +35,13 @@ const solidClasses: Record<ButtonColor, string> = {
 };
 
 const outlineClasses: Record<ButtonColor, string> = {
-  primary: 'bg-transparent text-content-primary border border-content-primary',
+  primary: 'bg-transparent text-content-primary border border-border-3',
   secondary:
-    'bg-transparent text-content-secondary border border-content-secondary',
+    'bg-transparent text-content-secondary border border-surface-secondary',
   positive:
-    'bg-transparent text-content-positive border border-content-positive',
+    'bg-transparent text-content-positive border border-surface-positive',
   negative:
-    'bg-transparent text-content-negative border border-content-negative'
+    'bg-transparent text-content-negative border border-surface-negative'
 };
 
 const textClasses: Record<ButtonColor, string> = {
