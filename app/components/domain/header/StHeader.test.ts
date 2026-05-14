@@ -39,10 +39,15 @@ describe('StHeader', () => {
     const store = useSideNavStore();
 
     expect(wrapper.find('header').exists()).toBe(true);
+    expect(wrapper.find('button[aria-label="Abrir menu"]').exists()).toBe(true);
+    expect(store.isOpen).toBe(false);
+
+    await wrapper.find('button[aria-label="Abrir menu"]').trigger('click');
+
+    expect(store.isOpen).toBe(true);
     expect(wrapper.find('button[aria-label="Fechar menu"]').exists()).toBe(
       true
     );
-    expect(store.isOpen).toBe(true);
 
     await wrapper.find('button[aria-label="Fechar menu"]').trigger('click');
 
