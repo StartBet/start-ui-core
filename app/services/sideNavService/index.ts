@@ -12,6 +12,7 @@ const sideNavItems: StNavbarItem[] = [
         id: 'meus-favoritos',
         label: 'Meus favoritos',
         ariaLabel: 'Meus favoritos',
+        to: '/cassino',
         icon: 'Star'
       },
       { id: 'slots', label: 'Slots', ariaLabel: 'Slots', icon: 'Coins' },
@@ -19,6 +20,7 @@ const sideNavItems: StNavbarItem[] = [
         id: 'cassino-ao-vivo',
         label: 'Cassino ao vivo',
         ariaLabel: 'Cassino ao vivo',
+        to: '/cassino',
         icon: 'Dice'
       },
       { id: 'aviator', label: 'Aviator', ariaLabel: 'Aviator', icon: 'Plane' },
@@ -27,18 +29,21 @@ const sideNavItems: StNavbarItem[] = [
         id: 'fortune-tiger',
         label: 'Fortune Tiger',
         ariaLabel: 'Fortune Tiger',
+        to: '/cassino',
         icon: 'Paw'
       },
       {
         id: 'football-studio',
         label: 'Football Studio',
         ariaLabel: 'Football Studio',
+        to: '/cassino',
         icon: 'Futbol'
       },
       {
         id: 'promocoes',
         label: 'Promoções',
         ariaLabel: 'Promoções',
+        to: '/cassino',
         icon: 'Gift'
       }
     ]
@@ -55,37 +60,49 @@ const sideNavItems: StNavbarItem[] = [
         id: 'esporte-ao-vivo',
         label: 'Esporte ao vivo',
         ariaLabel: 'Esporte ao vivo',
+        to: '/esportes',
         icon: 'tower-broadcast'
       },
       {
         id: 'e-sports',
         label: 'E-Sports',
         ariaLabel: 'E-Sports',
+        to: '/esportes',
         icon: 'gamepad'
       },
       {
         id: 'br-a',
         label: 'Brasileirão série A',
         ariaLabel: 'Brasileirão série A',
+        to: '/esportes',
         icon: 'trophy'
       },
       {
         id: 'br-b',
         label: 'Brasileirão série B',
         ariaLabel: 'Brasileirão série B',
+        to: '/esportes',
         icon: 'trophy'
       },
       {
         id: 'premier',
         label: 'Premier League',
         ariaLabel: 'Premier League',
+        to: '/esportes',
         icon: 'trophy'
       },
-      { id: 'fifa', label: 'FIFA', ariaLabel: 'FIFA', icon: 'trophy' },
+      {
+        id: 'fifa',
+        label: 'FIFA',
+        ariaLabel: 'FIFA',
+        to: '/esportes',
+        icon: 'trophy'
+      },
       {
         id: 'football-studio',
         label: 'Football Studio',
         ariaLabel: 'Football Studio',
+        to: '/esportes',
         icon: 'Futbol'
       }
     ]
