@@ -15,7 +15,9 @@ describe('Cassino Page', () => {
           StPaper: true,
           StTypography: true,
           StGrid: true,
-          StCardActionGame: true
+          StCardActionGame: true,
+          StButton: true,
+          StCardGame: true
         }
       }
     });
