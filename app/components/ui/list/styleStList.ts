@@ -146,13 +146,12 @@ export const buildListItemClasses = (
 
   const mainActionInteractive = [
     mainActionBase,
-    'appearance-none m-0 border-0 bg-transparent text-left',
+    'relative appearance-none m-0 border-0 bg-transparent text-left',
     'font-inherit text-inherit cursor-pointer select-none',
     options.hasSubItems
       ? 'rounded-r-none before:rounded-r-none after:rounded-r-none'
       : '',
     disabled ? 'pointer-events-none' : '',
-    'outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
     clickable ? interactionsHoverPressed : ''
   ]
     .filter(Boolean)

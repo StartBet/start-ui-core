@@ -1,5 +1,6 @@
 export const interactionsHoverPressed = [
-  'relative overflow-hidden',
+  'overflow-hidden',
+  'outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
   'hover:shadow-action-hover active:shadow-action-pressed',
   'before:z-10 before:absolute before:inset-0 before:transition-all before:duration-300 before:ease-in-out',
   'before:bg-[--color-hover] before:opacity-0 before:mix-blend-soft-light',

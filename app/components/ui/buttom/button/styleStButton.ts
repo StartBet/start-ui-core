@@ -71,8 +71,7 @@ export const buildButtonClasses = (
   } = props;
 
   const base = [
-    'inline-flex items-center rounded-ds-1 font-body font-semibold transition-all duration-200 ease-in-out disabled:cursor-not-allowed',
-    'outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
+    'relative inline-flex items-center rounded-ds-1 font-body font-semibold transition-all duration-200 ease-in-out disabled:cursor-not-allowed',
     isIconOnly ? 'justify-center' : 'justify-between',
     interactionsHoverPressed
   ]
