@@ -9,13 +9,35 @@ useHead({ title: getTitle('Principais Jogos') });
 const { games: slotsGames } = useGamesService();
 const { games: casinoLiveGames } = useCasinoLiveService();
 
+const byBasename = (modules: Record<string, unknown>) => {
+  const entries = Object.entries(modules).map(([key, value]) => {
+    const fileName = key.split('/').pop() ?? key;
+    return [fileName, String(value)] as const;
+  });
+  return Object.fromEntries(entries) as Record<string, string>;
+};
+
+const gameImages = byBasename(
+  import.meta.glob('../../../assets/imgs/games/*', {
+    eager: true,
+    import: 'default'
+  })
+);
+const casinoLiveImages = byBasename(
+  import.meta.glob('../../../assets/imgs/casino-live/*', {
+    eager: true,
+    import: 'default'
+  })
+);
+
 const resolveAssetsImageUrl = (
   dir: 'games' | 'casino-live',
   fileName?: string
 ) => {
   if (!fileName) return '';
-  return new URL(`../../../assets/imgs/${dir}/${fileName}`, import.meta.url)
-    .href;
+  return (
+    (dir === 'games' ? gameImages[fileName] : casinoLiveImages[fileName]) ?? ''
+  );
 };
 </script>
 
@@ -69,7 +91,7 @@ const resolveAssetsImageUrl = (
   <StPaper
     variant="surface-4"
     padding="0 2"
-    paddingMd="none"
+    paddingMd="0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -154,7 +176,7 @@ const resolveAssetsImageUrl = (
   <StPaper
     variant="surface-4"
     padding="0 2"
-    paddingMd="none"
+    paddingMd="0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"

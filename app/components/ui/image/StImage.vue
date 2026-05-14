@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref, useAttrs, watch } from 'vue';
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  useAttrs,
+  watch
+} from 'vue';
 import type { StImageProps } from '~/components/ui/image/StImage.interface';
 import {
   blobToDataImage,
@@ -19,6 +26,7 @@ const attrs = useAttrs();
 const cache = getImageCache();
 
 const dataSrc = ref<string | null>(null);
+const isErrored = ref(false);
 
 const sizeClasses = computed(() =>
   buildImageSizeClasses(props.width, props.height)
@@ -47,8 +55,10 @@ const imgAttrs = computed(() => {
 
 let isMounted = true;
 let requestId = 0;
+let stop: (() => void) | null = null;
 
 const load = async (src: string, id: number) => {
+  isErrored.value = false;
   if (!src) {
     dataSrc.value = null;
     return;
@@ -73,29 +83,40 @@ const load = async (src: string, id: number) => {
     cache.set(src, dataImage);
     if (isMounted && id === requestId) dataSrc.value = dataImage;
   } catch {
-    if (isMounted && id === requestId) dataSrc.value = null;
+    if (isMounted && id === requestId) {
+      dataSrc.value = null;
+      isErrored.value = true;
+    }
   }
 };
 
-watch(
-  () => props.src,
-  (next) => {
-    if (globalThis.window === undefined) return;
-    requestId += 1;
-    void load(next, requestId);
-  },
-  { immediate: true }
-);
+const displaySrc = computed(() => {
+  if (!props.src) return null;
+  if (isErrored.value) return null;
+  return dataSrc.value ?? props.src;
+});
+
+onMounted(() => {
+  stop = watch(
+    () => props.src,
+    (next) => {
+      requestId += 1;
+      void load(next, requestId);
+    },
+    { immediate: true }
+  );
+});
 
 onBeforeUnmount(() => {
   isMounted = false;
+  stop?.();
 });
 </script>
 
 <template>
   <img
-    v-if="dataSrc"
-    :src="dataSrc"
+    v-if="displaySrc"
+    :src="displaySrc"
     :alt="props.alt"
     :width="imgWidthAttr"
     :height="imgHeightAttr"

@@ -58,11 +58,9 @@ const providerName = computed(
           >{{ providerName }}</StTypography
         >
       </StPaper>
-      <button :class="classes.buttonAct">
-        <StButton color="secondary" className="pointer-events-none"
-          >Jogar</StButton
-        >
-      </button>
+      <div :class="classes.buttonAct">
+        <StButton color="secondary">Jogar</StButton>
+      </div>
     </StPaper>
   </div>
 </template>

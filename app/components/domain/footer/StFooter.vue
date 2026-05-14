@@ -132,8 +132,12 @@ const brandIllustrationName = computed(() =>
             </div>
           </div>
           <div class="flex flex-col items-start gap-ds-2">
-            <StTypography as="p" variant="body-small">
-              A <span style="color: rgb(98, 196, 11)">Startbet&nbsp;</span>é
+            <StTypography
+              as="p"
+              variant="body-small"
+              class="text-content-disable"
+            >
+              A <span class="text-content-secondary">Startbet&nbsp;</span>é
               operada pela LBBR APOSTAS DE QUOTA FIXA S.A, uma empresa
               registrada sob o CNPJ nº 56.441.713/0001-45, licenciada - em nível
               federal - pela Secretaria de Prêmios e Apostas do Ministério da
