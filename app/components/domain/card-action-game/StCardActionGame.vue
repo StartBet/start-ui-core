@@ -26,9 +26,16 @@ const classes = buildStCardActionGameClasses();
         height="32"
         :className="classes.illustration"
       />
-      <StTypography as="h1" variant="heading-4" :className="classes.title">{{
-        title || ''
-      }}</StTypography>
+      <StTypography
+        as="h1"
+        variant="hero-title"
+        :lines="2"
+        :size="8"
+        weight="bold"
+        lineHeight="tight"
+        :className="classes.title"
+        >{{ title || '' }}</StTypography
+      >
       <StTypography
         as="p"
         variant="body-medium"

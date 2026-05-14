@@ -20,7 +20,7 @@ const variantClasses: Record<TypographyVariant, string> = {
   'body-large': 'font-body text-body-large',
   'body-medium': 'font-body text-body-medium',
   'body-small': 'font-body text-body-small',
-  'hero-title': 'font-heading text-heading-1 text-shadow-ds-large italic'
+  'hero-title': 'font-heading text-shadow-ds-large italic'
 };
 
 const sizeClasses: Record<FontSize, string> = {

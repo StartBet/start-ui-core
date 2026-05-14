@@ -238,16 +238,16 @@
     --negative-color-900: #5a1613;
     --negative-color-950: #3a0e0c;
 
-    --shadow-scale-100: rgba(40, 0, 80, 0.04);
-    --shadow-scale-200: rgba(40, 0, 80, 0.08);
-    --shadow-scale-300: rgba(40, 0, 80, 0.16);
-    --shadow-scale-400: rgba(40, 0, 80, 0.24);
-    --shadow-scale-500: rgba(40, 0, 80, 0.32);
-    --shadow-scale-600: rgba(40, 0, 80, 0.4);
-    --shadow-scale-700: rgba(40, 0, 80, 0.48);
-    --shadow-scale-800: rgba(40, 0, 80, 0.56);
-    --shadow-scale-900: rgba(40, 0, 80, 0.64);
-    --shadow-scale-950: rgba(40, 0, 80, 0.72);
+    --shadow-scale-100: rgba(30, 5, 52, 0.04);
+    --shadow-scale-200: rgba(30, 5, 52, 0.08);
+    --shadow-scale-300: rgba(30, 5, 52, 0.16);
+    --shadow-scale-400: rgba(30, 5, 52, 0.24);
+    --shadow-scale-500: rgba(30, 5, 52, 0.32);
+    --shadow-scale-600: rgba(30, 5, 52, 0.4);
+    --shadow-scale-700: rgba(30, 5, 52, 0.48);
+    --shadow-scale-800: rgba(30, 5, 52, 0.56);
+    --shadow-scale-900: rgba(30, 5, 52, 0.64);
+    --shadow-scale-950: rgba(30, 5, 52, 0.72);
 
     --light-scale-100: rgba(180, 124, 255, 0.04);
     --light-scale-200: rgba(180, 124, 255, 0.08);

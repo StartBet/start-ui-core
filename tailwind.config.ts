@@ -442,9 +442,9 @@ export default {
         'ds-240': '1920px'
       },
       textShadow: {
-        'ds-small': '-1px 1px transparent, -2px 2px var(--light-scale-700)',
-        'ds-medium': '-1px 1px transparent, -3px 3px var(--light-scale-700)',
-        'ds-large': '-2px 2px transparent, -4px 4px var(--light-scale-700)'
+        'ds-small': '-1px 1px transparent, -2px 2px var(--shadow-scale-950)',
+        'ds-medium': '-1px 1px transparent, -3px 3px var(--shadow-scale-950)',
+        'ds-large': '-2px 2px transparent, -4px 4px var(--shadow-scale-950)'
       }
     }
   },
