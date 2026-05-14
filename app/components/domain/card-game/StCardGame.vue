@@ -2,6 +2,10 @@
 import { computed } from 'vue';
 import type { StCardGameProps } from './StCardGame.interface';
 import { buildStCardGameClasses, providerLabel } from './styleStCardGame';
+import StPaper from '~/components/ui/paper/StPaper.vue';
+import StImage from '~/components/ui/image/StImage.vue';
+import StTypography from '~/components/ui/typography/StTypography.vue';
+import StButton from '~/components/ui/buttom/button/StButton.vue';
 
 defineOptions({ name: 'StCardGame' });
 

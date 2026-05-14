@@ -3,6 +3,11 @@ import { getTitle } from '~/utils/seo-snippets';
 import { useHead } from 'nuxt/app';
 import { useGamesService } from '~/services/gamesService';
 import { useCasinoLiveService } from '~/services/casinoLiveService';
+import StPaper from '~/components/ui/paper/StPaper.vue';
+import StTypography from '~/components/ui/typography/StTypography.vue';
+import StGrid from '~/components/ui/grid/StGrid.vue';
+import StCardActionGame from '~/components/domain/card-action-game/StCardActionGame.vue';
+import StCardGame from '~/components/domain/card-game/StCardGame.vue';
 
 useHead({ title: getTitle('Principais Jogos') });
 

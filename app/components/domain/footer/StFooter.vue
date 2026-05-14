@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import StGrid from '~/components/ui/grid/StGrid.vue';
 import StIllustration from '~/components/ui/illustration/StIllustration.vue';
+import StButton from '~/components/ui/buttom/button/StButton.vue';
 import StUnorderedList from '~/components/ui/list/unordered-list/StUnorderedList.vue';
 import StListItem from '~/components/ui/list/list-item/StListItem.vue';
 import StPaper from '~/components/ui/paper/StPaper.vue';
