@@ -7,7 +7,7 @@ import type {
   TextAlign,
   TypographyClassProps,
   TypographyVariant
-} from '~/components/ui/typography/StTypography.interface'
+} from '~/components/ui/typography/StTypography.interface';
 
 const variantClasses: Record<TypographyVariant, string> = {
   'heading-1': 'font-heading text-heading-1 text-shadow-ds-large italic',
@@ -15,11 +15,13 @@ const variantClasses: Record<TypographyVariant, string> = {
   'heading-3': 'font-heading text-heading-3 text-shadow-ds-small italic',
   'heading-4': 'font-heading text-heading-4 text-shadow-ds-small italic',
   'highlight-large': 'font-highlight text-highlight-large text-shadow-ds-small',
-  'highlight-medium': 'font-highlight text-highlight-medium text-shadow-ds-small',
+  'highlight-medium':
+    'font-highlight text-highlight-medium text-shadow-ds-small',
   'body-large': 'font-body text-body-large',
   'body-medium': 'font-body text-body-medium',
-  'body-small': 'font-body text-body-small'
-}
+  'body-small': 'font-body text-body-small',
+  'hero-title': 'font-heading text-heading-1 text-shadow-ds-large italic'
+};
 
 const sizeClasses: Record<FontSize, string> = {
   1: 'text-ds-xs',
@@ -34,7 +36,7 @@ const sizeClasses: Record<FontSize, string> = {
   10: 'text-ds-5xl',
   11: 'text-heading-2',
   12: 'text-heading-1'
-}
+};
 
 const weightClasses: Record<FontWeight, string> = {
   light: 'font-light',
@@ -42,14 +44,14 @@ const weightClasses: Record<FontWeight, string> = {
   medium: 'font-medium',
   semibold: 'font-semibold',
   bold: 'font-bold'
-}
+};
 
 const familyClasses: Record<FontFamily, string> = {
   body: 'font-body',
   heading: 'font-heading',
   highlight: 'font-highlight',
   display: 'font-highlight'
-}
+};
 
 const lineHeightClasses: Record<LineHeight, string> = {
   tight: 'leading-ds-tight',
@@ -57,7 +59,7 @@ const lineHeightClasses: Record<LineHeight, string> = {
   normal: 'leading-ds-normal',
   relaxed: 'leading-ds-relaxed',
   loose: 'leading-ds-loose'
-}
+};
 
 const letterSpacingClasses: Record<LetterSpacing, string> = {
   tighter: 'tracking-ds-tight',
@@ -66,14 +68,14 @@ const letterSpacingClasses: Record<LetterSpacing, string> = {
   wide: 'tracking-ds-wide',
   wider: 'tracking-ds-wider',
   widest: 'tracking-ds-wider'
-}
+};
 
 const alignClasses: Record<TextAlign, string> = {
   left: 'text-left',
   center: 'text-center',
   right: 'text-right',
   justify: 'text-justify'
-}
+};
 
 const clampClasses: Record<1 | 2 | 3 | 4 | 5 | 6, string> = {
   1: 'overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [line-clamp:1]',
@@ -82,17 +84,19 @@ const clampClasses: Record<1 | 2 | 3 | 4 | 5 | 6, string> = {
   4: 'overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4] [line-clamp:4]',
   5: 'overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:5] [line-clamp:5]',
   6: 'overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:6] [line-clamp:6]'
-}
+};
 
-const normalizeClamp = (value: number | undefined): 1 | 2 | 3 | 4 | 5 | 6 | undefined => {
-  if (!value) return undefined
-  if (value <= 1) return 1
-  if (value === 2) return 2
-  if (value === 3) return 3
-  if (value === 4) return 4
-  if (value === 5) return 5
-  return 6
-}
+const normalizeClamp = (
+  value: number | undefined
+): 1 | 2 | 3 | 4 | 5 | 6 | undefined => {
+  if (!value) return undefined;
+  if (value <= 1) return 1;
+  if (value === 2) return 2;
+  if (value === 3) return 3;
+  if (value === 4) return 4;
+  if (value === 5) return 5;
+  return 6;
+};
 
 export const buildTypographyClasses = (props: TypographyClassProps) => {
   const {
@@ -112,9 +116,9 @@ export const buildTypographyClasses = (props: TypographyClassProps) => {
     truncate = false,
     maxLines,
     className
-  } = props
+  } = props;
 
-  const clamp = normalizeClamp(maxLines)
+  const clamp = normalizeClamp(maxLines);
 
   return [
     'm-0 p-0 text-content-default',
@@ -136,5 +140,5 @@ export const buildTypographyClasses = (props: TypographyClassProps) => {
     className
   ]
     .filter(Boolean)
-    .join(' ')
-}
+    .join(' ');
+};
