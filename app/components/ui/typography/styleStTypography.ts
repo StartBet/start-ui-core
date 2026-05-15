@@ -124,7 +124,17 @@ export const buildTypographyClasses = (props: TypographyClassProps) => {
 
   const clamp = normalizeClamp(maxLines);
 
-  return [
+  const heroTitleEfectClasses = [
+    'text-content-secondary relative pr-1',
+    '[text-shadow:none]',
+    'bg-[linear-gradient(140deg,transparent_45%,var(--bright-scale-700)_45%,var(--bright-scale-700)_65%,transparent_65%),linear-gradient(0deg,var(--color-content-secondary)_0%,var(--color-content-secondary)_100%)]',
+    'bg-clip-text text-transparent',
+    'drop-shadow-[-4px_4px_0px_var(--shadow-scale-950)]'
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const base = [
     'm-0 p-0 text-content-default',
     variantClasses[variant],
     size ? sizeClasses[size] : undefined,
@@ -145,4 +155,9 @@ export const buildTypographyClasses = (props: TypographyClassProps) => {
   ]
     .filter(Boolean)
     .join(' ');
+
+  return {
+    base,
+    heroTitleEfectClasses
+  };
 };

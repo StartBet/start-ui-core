@@ -337,15 +337,15 @@ export default {
         'ds-5xl': '3.75rem',
         'heading-1': [
           '3rem',
-          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '800' }
+          { lineHeight: '1.1', letterSpacing: '0', fontWeight: '800' }
         ],
         'heading-2': [
           '2.25rem',
-          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '800' }
+          { lineHeight: '1.1', letterSpacing: '0', fontWeight: '800' }
         ],
         'heading-3': [
           '1.875rem',
-          { lineHeight: '1.25', letterSpacing: '-0.025em', fontWeight: '800' }
+          { lineHeight: '1.25', letterSpacing: '0', fontWeight: '800' }
         ],
         'heading-4': [
           '1.5rem',
@@ -373,7 +373,7 @@ export default {
         ],
         'hero-title': [
           '3rem',
-          { lineHeight: '1.1', letterSpacing: '0', fontWeight: '800' }
+          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '800' }
         ]
       },
       lineHeight: {

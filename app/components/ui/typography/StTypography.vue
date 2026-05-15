@@ -74,13 +74,13 @@ const renderedLines = computed(() => {
 </script>
 
 <template>
-  <component :is="props.as" :class="classes" v-bind="$attrs">
+  <component :is="props.as" :class="classes.base" v-bind="$attrs">
     <template v-if="renderedLines">
       <template v-for="(line, idx) in renderedLines" :key="idx">
         <span
           :class="
             idx === renderedLines.length - 1 && shouldColorLastLine
-              ? 'text-content-secondary'
+              ? classes.heroTitleEfectClasses
               : undefined
           "
         >
