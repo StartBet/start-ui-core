@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import type { PluginAPI } from 'tailwindcss/types/config';
 
 export default {
   content: [
@@ -7,7 +8,7 @@ export default {
     './nuxt.config.{js,ts}'
   ],
   safelist: [
-    { pattern: /rounded-ds-(?:1|2)/ },
+    { pattern: /rounded-ds-[12]/ },
     { pattern: /shadow-paper-[0-4]/ },
     { pattern: /shadow-paper-[1-4]/, variants: ['hover'] },
     { pattern: /grid-cols-(?:[1-9]|1[0-2])/, variants: ['sm', 'md', 'lg'] },
@@ -319,8 +320,8 @@ export default {
         }
       },
       fontFamily: {
-        heading: ['"Base Neue"', 'sans-serif'],
-        highlight: ['"Base Neue"', 'sans-serif'],
+        heading: ['"Base Neue Condensed"', 'sans-serif'],
+        highlight: ['"Base Neue Condensed"', 'sans-serif'],
         body: ['Montserrat', 'sans-serif']
       },
       fontSize: {
@@ -336,27 +337,27 @@ export default {
         'ds-5xl': '3.75rem',
         'heading-1': [
           '3rem',
-          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }
+          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '800' }
         ],
         'heading-2': [
           '2.25rem',
-          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }
+          { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '800' }
         ],
         'heading-3': [
           '1.875rem',
-          { lineHeight: '1.25', letterSpacing: '-0.025em', fontWeight: '600' }
+          { lineHeight: '1.25', letterSpacing: '-0.025em', fontWeight: '800' }
         ],
         'heading-4': [
           '1.5rem',
-          { lineHeight: '1.25', letterSpacing: '0', fontWeight: '600' }
+          { lineHeight: '1.25', letterSpacing: '0', fontWeight: '800' }
         ],
         'highlight-large': [
           '1.5rem',
-          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
+          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '600' }
         ],
         'highlight-medium': [
           '1.125rem',
-          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
+          { lineHeight: '1.5', letterSpacing: '0', fontWeight: '600' }
         ],
         'body-large': [
           '1.125rem',
@@ -369,6 +370,10 @@ export default {
         'body-small': [
           '0.875rem',
           { lineHeight: '1.5', letterSpacing: '0', fontWeight: '400' }
+        ],
+        'hero-title': [
+          '3rem',
+          { lineHeight: '1.1', letterSpacing: '0', fontWeight: '800' }
         ]
       },
       lineHeight: {
@@ -449,9 +454,9 @@ export default {
     }
   },
   plugins: [
-    function ({ addUtilities, theme }) {
-      const shadows = theme('textShadow');
-      const utilities = Object.entries(shadows).map(([key, value]) => {
+    function ({ addUtilities, theme }: PluginAPI) {
+      const shadows = theme('textShadow') as Record<string, string> | undefined;
+      const utilities = Object.entries(shadows ?? {}).map(([key, value]) => {
         return {
           [`.text-shadow-${key}`]: {
             textShadow: value
