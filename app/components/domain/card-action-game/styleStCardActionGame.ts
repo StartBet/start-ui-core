@@ -1,8 +1,8 @@
 export const buildStCardActionGameClasses = () => {
   const root = 'flex flex-col items-center justify-center w-full';
   const paper =
-    'relative flex flex-col items-start justify-end gap-ds-1 mt-ds-2 overflow-hidden';
-  const illustration = 'absolute top-[-1rem] right-[-1rem] z-10 opacity-72';
+    'relative flex flex-col items-start justify-end gap-ds-1 mt-ds-2';
+  const illustration = 'absolute bottom-0 right-[-1rem] z-10 opacity-72';
   const title =
     'relative px-1 max-w-[75%] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] z-20 overflow-hidden';
   const subtitle = 'relative max-w-[75%] z-20';

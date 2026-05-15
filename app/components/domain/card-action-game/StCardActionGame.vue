@@ -23,7 +23,7 @@ const classes = buildStCardActionGameClasses();
         v-if="illustration"
         :name="illustration"
         alt="Ilustração do jogo"
-        height="32"
+        height="full"
         :className="classes.illustration"
       />
       <StTypography
@@ -48,7 +48,6 @@ const classes = buildStCardActionGameClasses();
         :to="to || ''"
         :target="target || ''"
         :className="classes.button"
-        fullWidth
       >
         {{ buttonText || '' }}
         <template #endAdornment>
