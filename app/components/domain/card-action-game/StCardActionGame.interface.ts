@@ -1,4 +1,5 @@
 import type { IllustrationName } from '~/components/ui/illustration/illustrations';
+import type { PaperBgScreen } from '~/components/ui/paper/StPaper.interface';
 
 export interface StCardActionGameProps {
   title?: string;
@@ -7,4 +8,5 @@ export interface StCardActionGameProps {
   to?: string;
   target?: string;
   illustration?: IllustrationName;
+  bgScreen?: PaperBgScreen;
 }

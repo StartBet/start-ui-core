@@ -15,6 +15,7 @@ const classes = buildStCardActionGameClasses();
       border="1"
       borderRadius="2"
       :elevation="3"
+      :bgScreen="bgScreen"
       width="full"
       height="32"
       :className="classes.paperJoin"

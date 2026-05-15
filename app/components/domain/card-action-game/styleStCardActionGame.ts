@@ -12,7 +12,7 @@ export const buildStCardActionGameClasses = () => {
   const paperBefore = [
     'before:content-[""] before:absolute before:inset-0 before:rounded-ds-2 before:z-20',
     'before:bg-gradient-to-r',
-    'before:from-[--color-surface-1] before:from-[25%]',
+    'before:from-[--color-shadow-3] before:from-[25%]',
     'before:to-transparent before:to-[100%]'
   ]
     .filter(Boolean)

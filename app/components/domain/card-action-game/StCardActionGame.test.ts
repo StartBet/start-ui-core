@@ -8,13 +8,15 @@ describe('StCardActionGame', () => {
       props: {
         title: 'Fortune Tiger',
         subtitle: 'PG Soft',
-        buttonText: 'Jogar'
+        buttonText: 'Jogar',
+        bgScreen: 'aviator'
       },
       global: {
         stubs: {
           StIllustration: true,
           StPaper: {
-            template: '<div><slot /></div>'
+            props: ['bgScreen'],
+            template: '<div :data-bg-screen="bgScreen"><slot /></div>'
           },
           StTypography: {
             template: '<span><slot /></span>'
@@ -29,5 +31,6 @@ describe('StCardActionGame', () => {
     expect(wrapper.text()).toContain('Fortune Tiger');
     expect(wrapper.text()).toContain('PG Soft');
     expect(wrapper.text()).toContain('Jogar');
+    expect(wrapper.find('[data-bg-screen="aviator"]').exists()).toBe(true);
   });
 });
