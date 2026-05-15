@@ -1,4 +1,4 @@
-import type { SizeValue } from '~/types/Spacing'
+import type { SizeValue } from '~/types/Spacing';
 
 export type PaperVariant =
   | 'surface-0'
@@ -11,7 +11,7 @@ export type PaperVariant =
   | 'surface-warning'
   | 'surface-positive'
   | 'surface-negative'
-  | 'surface-primary'
+  | 'surface-primary';
 
 export type PaperBorder =
   | 'none'
@@ -24,27 +24,36 @@ export type PaperBorder =
   | 'system'
   | 'warning'
   | 'positive'
-  | 'negative'
+  | 'negative';
 
-export type PaperBorderRadius = 'none' | '1' | '2'
+export type PaperBorderRadius = 'none' | '1' | '2';
 
-export type PaperElevation = 0 | 1 | 2 | 3 | 4
+export type PaperElevation = 0 | 1 | 2 | 3 | 4;
+
+export type PaperBgScreen =
+  | 'aviator'
+  | 'fortune-rabbit'
+  | 'fortune-tiger'
+  | 'gates-of-olimpus'
+  | 'soccer'
+  | 'basketball';
 
 export interface PaperClassProps {
-  variant?: PaperVariant
-  border?: PaperBorder
-  borderRadius?: PaperBorderRadius
-  elevation?: PaperElevation
-  interactive?: boolean
-  width?: SizeValue
-  height?: SizeValue
-  padding?: string
-  paddingSm?: string
-  paddingMd?: string
-  paddingLg?: string
-  margin?: string
-  marginSm?: string
-  marginMd?: string
-  marginLg?: string
-  className?: string
+  variant?: PaperVariant;
+  border?: PaperBorder;
+  borderRadius?: PaperBorderRadius;
+  elevation?: PaperElevation;
+  interactive?: boolean;
+  bgScreen?: PaperBgScreen;
+  width?: SizeValue;
+  height?: SizeValue;
+  padding?: string;
+  paddingSm?: string;
+  paddingMd?: string;
+  paddingLg?: string;
+  margin?: string;
+  marginSm?: string;
+  marginMd?: string;
+  marginLg?: string;
+  className?: string;
 }

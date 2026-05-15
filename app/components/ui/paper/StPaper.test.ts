@@ -59,4 +59,16 @@ describe('StPaper', () => {
     const wrapper = mount(StPaper, { props: { as: 'section' } });
     expect(wrapper.element.tagName.toLowerCase()).toBe('section');
   });
+
+  it('aplica bgScreen via style e classes auxiliares', () => {
+    const wrapper = mount(StPaper, { props: { bgScreen: 'aviator' } });
+    const cls = wrapper.attributes('class');
+    expect(cls).toContain('bg-cover');
+    expect(cls).toContain('bg-center');
+    expect(cls).toContain('bg-no-repeat');
+
+    const style = wrapper.attributes('style');
+    expect(style).toContain('background-image');
+    expect(style).toContain('screen-aviator');
+  });
 });

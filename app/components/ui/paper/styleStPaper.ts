@@ -1,12 +1,40 @@
 import type {
+  PaperBgScreen,
   PaperBorder,
   PaperBorderRadius,
   PaperClassProps,
   PaperElevation,
-  PaperVariant,
-} from '~/components/ui/paper/StPaper.interface'
-import { sizeWidthClasses, sizeHeightClasses } from '~/types/Spacing'
-import { spacingShorthandToClasses } from '~/utils/spacingShorthand'
+  PaperVariant
+} from '~/components/ui/paper/StPaper.interface';
+import { sizeWidthClasses, sizeHeightClasses } from '~/types/Spacing';
+import { spacingShorthandToClasses } from '~/utils/spacingShorthand';
+
+const bgScreenUrls: Record<PaperBgScreen, string> = {
+  aviator: new URL(
+    '../../../../assets/imgs/screens/screen-aviator.png',
+    import.meta.url
+  ).href,
+  'fortune-rabbit': new URL(
+    '../../../../assets/imgs/screens/screen-fortune-rabbit.png',
+    import.meta.url
+  ).href,
+  'fortune-tiger': new URL(
+    '../../../../assets/imgs/screens/screen-fortune-tiger.png',
+    import.meta.url
+  ).href,
+  'gates-of-olimpus': new URL(
+    '../../../../assets/imgs/screens/screen-gates-of-olimpus.png',
+    import.meta.url
+  ).href,
+  soccer: new URL(
+    '../../../../assets/imgs/screens/screen-soccer.png',
+    import.meta.url
+  ).href,
+  basketball: new URL(
+    '../../../../assets/imgs/screens/screen-basketball.png',
+    import.meta.url
+  ).href
+};
 
 const variantClasses: Record<PaperVariant, string> = {
   'surface-0': 'bg-surface-0',
@@ -20,7 +48,7 @@ const variantClasses: Record<PaperVariant, string> = {
   'surface-positive': 'bg-surface-positive',
   'surface-negative': 'bg-surface-negative',
   'surface-primary': 'bg-surface-primary'
-}
+};
 
 const borderClasses: Record<PaperBorder, string> = {
   none: 'border-0',
@@ -34,13 +62,13 @@ const borderClasses: Record<PaperBorder, string> = {
   warning: 'border border-content-warning',
   positive: 'border border-content-positive',
   negative: 'border border-content-negative'
-}
+};
 
 const borderRadiusClasses: Record<PaperBorderRadius, string> = {
   none: 'rounded-none',
   '1': 'rounded-ds-1',
   '2': 'rounded-ds-2'
-}
+};
 
 const elevationClasses: Record<PaperElevation, string> = {
   0: 'shadow-paper-0',
@@ -48,13 +76,23 @@ const elevationClasses: Record<PaperElevation, string> = {
   2: 'shadow-paper-2',
   3: 'shadow-paper-3',
   4: 'shadow-paper-4'
-}
+};
 
 const hoverElevationClasses: Record<Exclude<PaperElevation, 4>, string> = {
   0: 'hover:shadow-paper-1',
   1: 'hover:shadow-paper-2',
   2: 'hover:shadow-paper-3',
   3: 'hover:shadow-paper-4'
+};
+
+export function buildPaperStyle(props: Pick<PaperClassProps, 'bgScreen'>) {
+  const { bgScreen } = props;
+
+  if (!bgScreen) return undefined;
+
+  return {
+    backgroundImage: `url(${bgScreenUrls[bgScreen]})`
+  } satisfies Record<string, string>;
 }
 
 export function buildPaperClasses(props: PaperClassProps) {
@@ -64,6 +102,7 @@ export function buildPaperClasses(props: PaperClassProps) {
     borderRadius = '1',
     elevation = 1,
     interactive = false,
+    bgScreen,
     width,
     height,
     padding,
@@ -75,7 +114,7 @@ export function buildPaperClasses(props: PaperClassProps) {
     marginMd,
     marginLg,
     className
-  } = props
+  } = props;
 
   return [
     'relative block transition-all duration-200 ease-in-out',
@@ -83,8 +122,11 @@ export function buildPaperClasses(props: PaperClassProps) {
     borderClasses[border],
     borderRadiusClasses[borderRadius],
     elevationClasses[elevation],
+    bgScreen ? 'bg-cover bg-center bg-no-repeat' : undefined,
     interactive ? 'cursor-pointer active:translate-y-px' : undefined,
-    interactive && elevation !== 4 ? hoverElevationClasses[elevation] : undefined,
+    interactive && elevation !== 4
+      ? hoverElevationClasses[elevation]
+      : undefined,
     width ? sizeWidthClasses[width] : undefined,
     height ? sizeHeightClasses[height] : undefined,
     ...spacingShorthandToClasses(padding, 'p'),
@@ -98,5 +140,5 @@ export function buildPaperClasses(props: PaperClassProps) {
     className
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(' ');
 }
