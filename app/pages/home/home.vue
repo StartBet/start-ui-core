@@ -75,6 +75,7 @@ const resolveAssetsImageUrl = (
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
+        bgScreen="fortune-tiger"
         illustration="characters/character-fortune-tiger"
       />
       <StCardActionGame
@@ -82,14 +83,16 @@ const resolveAssetsImageUrl = (
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
+        bgScreen="fortune-rabbit"
         illustration="characters/character-fortune-rabbit"
       />
       <StCardActionGame
-        title="Fortune Mouse"
+        title="Voos no Aviator"
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
-        illustration="characters/character-fortune-mouse"
+        bgScreen="aviator"
+        illustration="casino/casino-fly-5"
       />
     </StGrid>
   </StPaper>
@@ -206,6 +209,7 @@ const resolveAssetsImageUrl = (
         subtitle="Campeonato Espanhol"
         buttonText="Jogar"
         to="/"
+        bgScreen="soccer"
         illustration="pixar/pixar-barcelona"
       />
       <StCardActionGame
@@ -213,6 +217,7 @@ const resolveAssetsImageUrl = (
         subtitle="Tudo que acontece na NBA"
         buttonText="Jogar"
         to="/"
+        bgScreen="basketball"
         illustration="pixar/pixar-okc"
       />
       <StCardActionGame
@@ -220,6 +225,7 @@ const resolveAssetsImageUrl = (
         subtitle="Campeonato Brasileiro de Futebol"
         buttonText="Jogar"
         to="/"
+        bgScreen="soccer"
         illustration="pixar/pixar-santos"
       />
     </StGrid>
