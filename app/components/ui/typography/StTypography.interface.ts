@@ -12,7 +12,16 @@ export type TypographyVariant =
 
 export type FontSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export type FontWeight = 'light' | 'normal' | 'medium' | 'semibold' | 'bold';
+export type FontWeight =
+  | 'thin'
+  | 'extralight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black';
 
 export type FontFamily = 'body' | 'heading' | 'highlight' | 'display';
 

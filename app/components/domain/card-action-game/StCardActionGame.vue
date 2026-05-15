@@ -31,7 +31,7 @@ const classes = buildStCardActionGameClasses();
         variant="hero-title"
         :lines="2"
         :size="8"
-        weight="bold"
+        weight="extrabold"
         lineHeight="tight"
         :className="classes.title"
         >{{ title || '' }}</StTypography

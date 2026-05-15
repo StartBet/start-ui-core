@@ -20,7 +20,7 @@ const variantClasses: Record<TypographyVariant, string> = {
   'body-large': 'font-body text-body-large',
   'body-medium': 'font-body text-body-medium',
   'body-small': 'font-body text-body-small',
-  'hero-title': 'font-heading text-shadow-ds-large italic'
+  'hero-title': 'font-highlight text-shadow-ds-large italic'
 };
 
 const sizeClasses: Record<FontSize, string> = {
@@ -39,11 +39,15 @@ const sizeClasses: Record<FontSize, string> = {
 };
 
 const weightClasses: Record<FontWeight, string> = {
+  thin: 'font-thin',
+  extralight: 'font-extralight',
   light: 'font-light',
   normal: 'font-normal',
   medium: 'font-medium',
   semibold: 'font-semibold',
-  bold: 'font-bold'
+  bold: 'font-bold',
+  extrabold: 'font-extrabold',
+  black: 'font-black'
 };
 
 const familyClasses: Record<FontFamily, string> = {
