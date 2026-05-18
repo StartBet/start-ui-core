@@ -101,19 +101,13 @@ const sportsIllustrations = [
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
   >
-    <StTypography
-      as="h2"
-      variant="heading-2"
-      className="text-center align-center"
-      >Principais Jogos</StTypography
-    >
     <StGrid
       cols="1"
       smCols="1"
-      mdCols="3"
-      lgCols="3"
+      mdCols="4"
+      lgCols="4"
       gap="4"
-      padding="4 0 0"
+      padding="0"
       className="w-full"
     >
       <StCardActionGame
@@ -140,6 +134,14 @@ const sportsIllustrations = [
         bgScreen="aviator"
         illustration="casino/casino-fly-5"
       />
+      <StCardActionGame
+        title="Gates of Olympus"
+        subtitle="PG Soft"
+        buttonText="Jogar"
+        to="/"
+        bgScreen="gates-of-olimpus"
+        illustration="characters/character-game-zeus-2"
+      />
     </StGrid>
   </StPaper>
   <StPaper
@@ -150,19 +152,13 @@ const sportsIllustrations = [
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
   >
-    <StTypography
-      as="h2"
-      variant="heading-2"
-      className="text-center align-center"
-      >Ao vivo</StTypography
-    >
     <StGrid
       cols="1"
       smCols="1"
       mdCols="2"
       lgCols="2"
       gap="4"
-      padding="4 0 4"
+      padding="0"
       className="w-full"
     >
       <StCardActionGame
