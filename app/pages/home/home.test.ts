@@ -5,6 +5,10 @@ vi.mock('nuxt/app', () => ({
   useHead: vi.fn()
 }));
 
+vi.mock('~/components/ui/illustration/StIllustration.vue', () => ({
+  default: { template: '<img data-test="illustration" />' }
+}));
+
 import Home from './home.vue';
 
 describe('Home Page', () => {
@@ -15,7 +19,9 @@ describe('Home Page', () => {
           StPaper: true,
           StTypography: true,
           StGrid: true,
-          StCardActionGame: true
+          StCardActionGame: true,
+          StCardGame: true,
+          StIllustration: true
         }
       }
     });

@@ -8,6 +8,7 @@ import StTypography from '~/components/ui/typography/StTypography.vue';
 import StGrid from '~/components/ui/grid/StGrid.vue';
 import StCardActionGame from '~/components/domain/card-action-game/StCardActionGame.vue';
 import StCardGame from '~/components/domain/card-game/StCardGame.vue';
+import StIllustration from '~/components/ui/illustration/StIllustration.vue';
 
 useHead({ title: getTitle('Principais Jogos') });
 
@@ -44,13 +45,58 @@ const resolveAssetsImageUrl = (
     (dir === 'games' ? gameImages[fileName] : casinoLiveImages[fileName]) ?? ''
   );
 };
+
+const sportsIllustrations = [
+  { name: 'sports/sports-badmintom', title: 'Badminton' },
+  { name: 'sports/sports-baseball', title: 'Baseball' },
+  { name: 'sports/sports-basketball', title: 'Basquete' },
+  { name: 'sports/sports-cricket', title: 'Críquete' },
+  { name: 'sports/sports-dart', title: 'Dardos' },
+  { name: 'sports/sports-floorball', title: 'Floorball' },
+  { name: 'sports/sports-hoquei', title: 'Hóquei' },
+  { name: 'sports/sports-soccer', title: 'Futebol' },
+  { name: 'sports/sports-tenis', title: 'Tênis' },
+  { name: 'sports/sports-voleiball', title: 'Vôlei' }
+] as const;
 </script>
 
 <template>
   <StPaper
     variant="surface-4"
-    padding="6 2"
-    paddingMd="6 0"
+    padding="4 2"
+    paddingMd="2 0"
+    borderRadius="none"
+    class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
+    :elevation="0"
+  >
+    <StGrid
+      cols="1"
+      smCols="1"
+      mdCols="2"
+      lgCols="2"
+      gap="4"
+      padding="2 0 4"
+      className="w-full"
+    >
+      <StCardActionGame
+        title="Café da manhã na Start"
+        buttonText="Quero Cafezin"
+        surface="1"
+        to="/"
+        illustration="coins/coin-coffe-break"
+      />
+      <StCardActionGame
+        title="Cash Back de 25%"
+        buttonText="Quero Aproveitar"
+        to="/"
+        illustration="coins/coin-cash-back"
+      />
+    </StGrid>
+  </StPaper>
+  <StPaper
+    variant="surface-4"
+    padding="0 2 4"
+    paddingMd="0 0 4"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -123,14 +169,52 @@ const resolveAssetsImageUrl = (
         title="Cassino Ao vivo"
         buttonText="Quero Jogar"
         to="/"
-        illustration="casino/casino-4"
+        illustration="casino/casino-roulette-3"
       />
       <StCardActionGame
         title="Esporte Ao Vivo"
         buttonText="Quero Jogar"
         to="/"
-        illustration="characters/character-soccer-13"
+        illustration="sports/sports-1"
       />
+    </StGrid>
+  </StPaper>
+
+  <StPaper
+    variant="surface-4"
+    padding="0 2"
+    paddingMd="0"
+    borderRadius="none"
+    class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
+    :elevation="0"
+  >
+    <StGrid
+      cols="3"
+      smCols="5"
+      mdCols="10"
+      lgCols="10"
+      gap="8"
+      padding="8 0 8"
+      className="w-full"
+    >
+      <div
+        v-for="item in sportsIllustrations"
+        :key="item.name"
+        className="w-full flex items-center justify-center flex-col gap-ds-2"
+      >
+        <StIllustration
+          :name="item.name"
+          :alt="item.title"
+          :title="item.title"
+          width="auto"
+        />
+        <StTypography
+          as="h4"
+          variant="body-medium"
+          className="text-center align-center"
+          >{{ item.title }}</StTypography
+        >
+      </div>
     </StGrid>
   </StPaper>
 
