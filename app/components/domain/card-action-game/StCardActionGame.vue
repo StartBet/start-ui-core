@@ -53,7 +53,7 @@ const classes = buildStCardActionGameClasses();
         {{ buttonText || '' }}
         <template #endAdornment>
           <StIllustration
-            name="brand/icon-button-1"
+            name="brand/icon-button-3"
             alt="Button Right"
             height="3"
             :className="classes.buttonEndIcon"
