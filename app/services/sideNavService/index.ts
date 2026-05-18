@@ -54,7 +54,7 @@ const sideNavItems: StNavbarItem[] = [
     ariaLabel: 'Esportes',
     icon: 'Futbol',
     to: '/esportes',
-    chip: { variant: 'secondary', label: 'VIVO' },
+    chip: { variant: 'secondary', label: 'AO VIVO' },
     children: [
       {
         id: 'esporte-ao-vivo',
