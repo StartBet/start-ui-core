@@ -59,6 +59,10 @@ export const CASINO_ILLUSTRATIONS = {
     import('~~/assets/illustrations/casino/casino-roulette-2.svg?raw').then(
       (m) => m.default
     ),
+  'casino/casino-roulette-3': () =>
+    import('~~/assets/illustrations/casino/casino-roulette-3.svg?raw').then(
+      (m) => m.default
+    ),
   'casino/casino-slot-1': () =>
     import('~~/assets/illustrations/casino/casino-slot-1.svg?raw').then(
       (m) => m.default
