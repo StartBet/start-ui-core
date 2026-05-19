@@ -21,7 +21,9 @@ describe('Home Page', () => {
           StGrid: true,
           StCardActionGame: true,
           StCardGame: true,
-          StIllustration: true
+          StIllustration: true,
+          StIcon: true,
+          StMiniCardGame: true
         }
       }
     });

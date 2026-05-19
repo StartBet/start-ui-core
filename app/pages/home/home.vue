@@ -8,6 +8,7 @@ import StTypography from '~/components/ui/typography/StTypography.vue';
 import StGrid from '~/components/ui/grid/StGrid.vue';
 import StCardActionGame from '~/components/domain/card-action-game/StCardActionGame.vue';
 import StCardGame from '~/components/domain/card-game/StCardGame.vue';
+import StMiniCardGame from '~/components/domain/mini-card-game/StMiniCardGame.vue';
 import StIllustration from '~/components/ui/illustration/StIllustration.vue';
 
 useHead({ title: getTitle('Principais Jogos') });
@@ -75,7 +76,6 @@ const sportsIllustrations = [
       mdCols="2"
       lgCols="2"
       gap="4"
-      padding="2 0 4"
       className="w-full"
     >
       <StCardActionGame
@@ -93,10 +93,66 @@ const sportsIllustrations = [
       />
     </StGrid>
   </StPaper>
+
   <StPaper
     variant="surface-4"
-    padding="0 2 4"
-    paddingMd="0 0 4"
+    padding="4 2"
+    paddingMd="2 0"
+    borderRadius="none"
+    class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
+    :elevation="0"
+  >
+    <StGrid
+      cols="1"
+      smCols="1"
+      mdCols="4"
+      lgCols="4"
+      gap="3"
+      className="w-full"
+    >
+      <StPaper
+        variant="surface-3"
+        padding="3"
+        border="1"
+        borderRadius="2"
+        :elevation="0"
+        className="flex items-center justify-center gap-ds-2 text-content-secondary"
+      >
+        <StIcon name="trophy" :size="8" ariaLabel="trophy" />
+        <StTypography
+          as="h3"
+          variant="hero-title"
+          :lines="2"
+          :size="4"
+          weight="extrabold"
+          lineHeight="tight"
+          >Últimos ganhos hoje</StTypography
+        >
+      </StPaper>
+      <StGrid
+        cols="1"
+        smCols="1"
+        mdCols="4"
+        lgCols="4"
+        gap="3"
+        className="w-full md:col-span-3"
+      >
+        <StMiniCardGame
+          v-for="game in slotsGames.slice(0, 4)"
+          :key="game.id"
+          :name="game.name"
+          :provider="game.provider"
+          :image="resolveAssetsImageUrl('games', game.image)"
+          :latestEarnings="game.latestEarnings"
+        />
+      </StGrid>
+    </StGrid>
+  </StPaper>
+
+  <StPaper
+    variant="surface-4"
+    padding="4 2"
+    paddingMd="2 0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -107,7 +163,6 @@ const sportsIllustrations = [
       mdCols="4"
       lgCols="4"
       gap="4"
-      padding="0"
       className="w-full"
     >
       <StCardActionGame
@@ -146,8 +201,8 @@ const sportsIllustrations = [
   </StPaper>
   <StPaper
     variant="surface-4"
-    padding="0 2"
-    paddingMd="0"
+    padding="4 2"
+    paddingMd="2 0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -158,7 +213,6 @@ const sportsIllustrations = [
       mdCols="2"
       lgCols="2"
       gap="4"
-      padding="0"
       className="w-full"
     >
       <StCardActionGame
@@ -178,8 +232,8 @@ const sportsIllustrations = [
 
   <StPaper
     variant="surface-4"
-    padding="0 2"
-    paddingMd="0"
+    padding="4 2"
+    paddingMd="2 0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -190,7 +244,6 @@ const sportsIllustrations = [
       mdCols="10"
       lgCols="10"
       gap="8"
-      padding="8 0 8"
       className="w-full"
     >
       <div
@@ -216,21 +269,23 @@ const sportsIllustrations = [
 
   <StPaper
     variant="surface-3"
-    padding="6 2"
-    paddingMd="6 0"
+    padding="4 2"
+    paddingMd="2 0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
   >
-    <StTypography as="h3" variant="heading-3">Jogos Populares</StTypography>
-    <StGrid
-      cols="2"
-      mdCols="3"
-      lgCols="5"
-      gap="4"
-      padding="6 0"
-      className="w-full"
+    <StTypography
+      as="h3"
+      variant="hero-title"
+      :lines="2"
+      :size="8"
+      weight="extrabold"
+      lineHeight="tight"
+      className="mb-ds-4"
+      >Jogos Populares</StTypography
     >
+    <StGrid cols="2" mdCols="3" lgCols="5" gap="4" className="w-full">
       <StCardGame
         v-for="game in slotsGames.slice(0, 5)"
         variant="surface-3"
@@ -241,15 +296,17 @@ const sportsIllustrations = [
       />
     </StGrid>
 
-    <StTypography as="h3" variant="heading-3">Cassino ao vivo</StTypography>
-    <StGrid
-      cols="2"
-      mdCols="3"
-      lgCols="5"
-      gap="4"
-      padding="6 0"
-      className="w-full"
+    <StTypography
+      as="h3"
+      variant="hero-title"
+      :lines="2"
+      :size="8"
+      weight="extrabold"
+      lineHeight="tight"
+      className="my-ds-4"
+      >Cassino ao vivo</StTypography
     >
+    <StGrid cols="2" mdCols="3" lgCols="5" gap="4" className="w-full">
       <StCardGame
         v-for="game in casinoLiveGames.slice(0, 5)"
         variant="surface-3"
@@ -263,16 +320,20 @@ const sportsIllustrations = [
 
   <StPaper
     variant="surface-4"
-    padding="0 2"
-    paddingMd="0"
+    padding="4 2 8"
+    paddingMd="4 0 8"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
   >
     <StTypography
       as="h2"
-      variant="heading-2"
-      className="text-center align-center"
+      variant="hero-title"
+      :lines="2"
+      :size="8"
+      weight="extrabold"
+      lineHeight="tight"
+      className="mb-ds-2"
       >Esportes</StTypography
     >
     <StGrid
@@ -281,7 +342,6 @@ const sportsIllustrations = [
       mdCols="3"
       lgCols="3"
       gap="4"
-      padding="4 0 8"
       className="w-full"
     >
       <StCardActionGame
