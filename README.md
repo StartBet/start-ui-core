@@ -1,75 +1,76 @@
-# Nuxt Minimal Starter
+# Start UI Core (StartBet)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Projeto visual para a nova interface da **StartBet**. Este repositório concentra os componentes de UI e páginas (Nuxt) usados para prototipar e evoluir a experiência do produto.
 
-## Setup
+## Stack
 
-Make sure to install dependencies:
+- Nuxt (Vue 3)
+- TailwindCSS
+- Pinia (stores)
+- Vitest + @vue/test-utils (testes)
+
+## Requisitos
+
+- Node.js (recomendado: versão LTS)
+- npm (ou o gerenciador de pacotes da sua preferência)
+
+## Instalação
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Rodar em desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Sobe o servidor em `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Scripts úteis
 
 ```bash
-# npm
+# build de produção
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
+# preview do build
 npm run preview
 
-# pnpm
-pnpm preview
+# testes
+npm run test
+npm run test:run
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
+# formatação
+npm run format
+npm run format:check
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Arquitetura do projeto
+
+A estrutura segue o padrão do Nuxt com diretório `app/` e módulos organizados por domínio/UI:
+
+- `app/pages/`: páginas da aplicação. As rotas são registradas no `nuxt.config.ts` via hook `pages:extend`.
+- `app/layouts/`: layouts (ex.: `default`) que compõem header/navbar/footer e encapsulam as páginas.
+- `app/components/`:
+  - `ui/`: componentes atômicos e reutilizáveis do design system (ex.: `paper`, `typography`, `grid`, `icon`, `image`, `illustration`).
+  - `domain/`: componentes de “negócio” compostos (ex.: cards e módulos de tela).
+- `app/stores/`: stores Pinia (estado global, ex.: side nav).
+- `app/services/`: serviços/composables que fornecem dados e regras (ex.: catálogo de jogos e providers).
+- `app/composables/`: hooks reutilizáveis (ex.: breakpoints).
+- `app/utils/`: utilitários (ex.: SEO snippets, helpers de layout, parsing).
+- `assets/`:
+  - `assets/imgs/`: imagens raster (ex.: capas/backgrounds).
+  - `assets/illustrations/`: SVGs usados pelo componente `StIllustration` (carregamento via registry em `app/components/ui/illustration/illustrations/*`).
+
+## Padrão dos componentes
+
+Em geral, os componentes seguem um “kit” por pasta (especialmente em `ui/` e `domain/`):
+
+- `Componente.vue`: implementação
+- `Componente.interface.ts`: props/tipos
+- `styleComponente.ts`: builder de classes/utilitários de estilo
+- `Componente.test.ts`: testes
+- `index.ts`: exports
+
+Isso facilita manutenção, testes e consistência do design system.
