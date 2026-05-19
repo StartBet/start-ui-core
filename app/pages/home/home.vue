@@ -123,13 +123,18 @@ const sportsIllustrations = [
     >
       <StPaper
         variant="surface-3"
-        padding="3"
+        padding="1"
         border="1"
         borderRadius="2"
         :elevation="0"
         className="flex items-center justify-center gap-ds-2 text-content-secondary"
       >
-        <StIcon name="trophy" :size="8" ariaLabel="trophy" />
+        <StIllustration
+          name="trophy/random-trophy-2"
+          alt="Troféu"
+          height="7"
+          className="shrink-0"
+        />
         <StTypography
           as="h3"
           variant="hero-title"
