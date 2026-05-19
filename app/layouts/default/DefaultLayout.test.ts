@@ -1,6 +1,14 @@
 import { mount } from '@vue/test-utils';
 import { describe, expect, it, vi } from 'vitest';
 
+vi.mock('vue-router', () => ({
+  useRoute: () => ({ fullPath: '/' })
+}));
+
+vi.mock('~/stores/sideNavStore', () => ({
+  useSideNavStore: () => ({ close: vi.fn() })
+}));
+
 vi.mock('~/components/domain/header/StHeader.vue', () => ({
   default: { template: '<header data-test="header" />' }
 }));
