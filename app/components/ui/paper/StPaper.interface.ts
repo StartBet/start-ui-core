@@ -30,21 +30,13 @@ export type PaperBorderRadius = 'none' | '1' | '2';
 
 export type PaperElevation = 0 | 1 | 2 | 3 | 4;
 
-export type PaperBgScreen =
-  | 'aviator'
-  | 'fortune-rabbit'
-  | 'fortune-tiger'
-  | 'gates-of-olimpus'
-  | 'soccer'
-  | 'basketball';
-
 export interface PaperClassProps {
   variant?: PaperVariant;
   border?: PaperBorder;
   borderRadius?: PaperBorderRadius;
   elevation?: PaperElevation;
   interactive?: boolean;
-  bgScreen?: PaperBgScreen;
+  bgImage?: string;
   width?: SizeValue;
   height?: SizeValue;
   padding?: string;

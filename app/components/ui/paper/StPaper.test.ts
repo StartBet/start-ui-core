@@ -60,8 +60,10 @@ describe('StPaper', () => {
     expect(wrapper.element.tagName.toLowerCase()).toBe('section');
   });
 
-  it('aplica bgScreen via style e classes auxiliares', () => {
-    const wrapper = mount(StPaper, { props: { bgScreen: 'aviator' } });
+  it('aplica bgImage via style e classes auxiliares', () => {
+    const wrapper = mount(StPaper, {
+      props: { bgImage: '/assets/imgs/screens/screen-aviator.png' }
+    });
     const cls = wrapper.attributes('class');
     expect(cls).toContain('bg-cover');
     expect(cls).toContain('bg-center');

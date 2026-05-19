@@ -1,5 +1,4 @@
 import type {
-  PaperBgScreen,
   PaperBorder,
   PaperBorderRadius,
   PaperClassProps,
@@ -8,33 +7,6 @@ import type {
 } from '~/components/ui/paper/StPaper.interface';
 import { sizeWidthClasses, sizeHeightClasses } from '~/types/Spacing';
 import { spacingShorthandToClasses } from '~/utils/spacingShorthand';
-
-const bgScreenUrls: Record<PaperBgScreen, string> = {
-  aviator: new URL(
-    '../../../../assets/imgs/screens/screen-aviator.png',
-    import.meta.url
-  ).href,
-  'fortune-rabbit': new URL(
-    '../../../../assets/imgs/screens/screen-fortune-rabbit.png',
-    import.meta.url
-  ).href,
-  'fortune-tiger': new URL(
-    '../../../../assets/imgs/screens/screen-fortune-tiger.png',
-    import.meta.url
-  ).href,
-  'gates-of-olimpus': new URL(
-    '../../../../assets/imgs/screens/screen-gates-of-olimpus.png',
-    import.meta.url
-  ).href,
-  soccer: new URL(
-    '../../../../assets/imgs/screens/screen-soccer.png',
-    import.meta.url
-  ).href,
-  basketball: new URL(
-    '../../../../assets/imgs/screens/screen-basketball.png',
-    import.meta.url
-  ).href
-};
 
 const variantClasses: Record<PaperVariant, string> = {
   'surface-0': 'bg-surface-0',
@@ -85,13 +57,13 @@ const hoverElevationClasses: Record<Exclude<PaperElevation, 4>, string> = {
   3: 'hover:shadow-paper-4'
 };
 
-export function buildPaperStyle(props: Pick<PaperClassProps, 'bgScreen'>) {
-  const { bgScreen } = props;
+export function buildPaperStyle(props: Pick<PaperClassProps, 'bgImage'>) {
+  const { bgImage } = props;
 
-  if (!bgScreen) return undefined;
+  if (!bgImage) return undefined;
 
   return {
-    backgroundImage: `url(${bgScreenUrls[bgScreen]})`
+    backgroundImage: `url(${bgImage})`
   } satisfies Record<string, string>;
 }
 
@@ -102,7 +74,7 @@ export function buildPaperClasses(props: PaperClassProps) {
     borderRadius = '1',
     elevation = 1,
     interactive = false,
-    bgScreen,
+    bgImage,
     width,
     height,
     padding,
@@ -122,7 +94,7 @@ export function buildPaperClasses(props: PaperClassProps) {
     borderClasses[border],
     borderRadiusClasses[borderRadius],
     elevationClasses[elevation],
-    bgScreen ? 'bg-cover bg-center bg-no-repeat' : undefined,
+    bgImage ? 'bg-cover bg-center bg-no-repeat' : undefined,
     interactive ? 'cursor-pointer active:translate-y-px' : undefined,
     interactive && elevation !== 4
       ? hoverElevationClasses[elevation]

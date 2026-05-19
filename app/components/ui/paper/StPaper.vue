@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type {
-  PaperBgScreen,
   PaperBorder,
   PaperBorderRadius,
   PaperElevation,
@@ -20,7 +19,7 @@ const props = withDefaults(
     borderRadius?: PaperBorderRadius;
     elevation?: PaperElevation;
     interactive?: boolean;
-    bgScreen?: PaperBgScreen;
+    bgImage?: string;
     width?: SizeValue;
     height?: SizeValue;
     padding?: string;
