@@ -335,6 +335,8 @@ export default {
         'ds-3xl': '2.25rem',
         'ds-4xl': '3rem',
         'ds-5xl': '3.75rem',
+        'ds-6xl': '4.5rem',
+        'ds-7xl': '5rem',
         'heading-1': [
           '3rem',
           { lineHeight: '1.1', letterSpacing: '0', fontWeight: '800' }

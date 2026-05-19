@@ -34,8 +34,8 @@ const sizeClasses: Record<FontSize, string> = {
   8: 'text-ds-3xl',
   9: 'text-ds-4xl',
   10: 'text-ds-5xl',
-  11: 'text-heading-2',
-  12: 'text-heading-1'
+  11: 'text-ds-6xl',
+  12: 'text-ds-7xl'
 };
 
 const weightClasses: Record<FontWeight, string> = {

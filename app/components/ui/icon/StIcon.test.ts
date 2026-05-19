@@ -11,19 +11,21 @@ describe('StIcon', () => {
     const wrapper = mount(StIcon, {
       props: { name: 'plus', size: 2, ariaLabel: 'Adicionar' }
     });
-    expect(wrapper.element.tagName.toLowerCase()).toBe('svg');
-    expect(wrapper.attributes('aria-label')).toBe('Adicionar');
+    expect(wrapper.element.tagName.toLowerCase()).toBe('span');
+    expect(wrapper.find('svg').exists()).toBe(true);
+    expect(wrapper.find('svg').attributes('aria-label')).toBe('Adicionar');
 
     const list = classList(wrapper.attributes('class'));
-    expect(list).toContain('text-[theme(spacing.ds-2)]');
+    expect(list).toContain('text-ds-sm');
   });
 
   it('renderiza svg para ícone de brands quando usa prefixo fab:', () => {
     const wrapper = mount(StIcon, {
       props: { name: 'fab:facebook-f', size: 2, ariaLabel: 'Facebook' }
     });
-    expect(wrapper.element.tagName.toLowerCase()).toBe('svg');
-    expect(wrapper.attributes('aria-label')).toBe('Facebook');
+    expect(wrapper.element.tagName.toLowerCase()).toBe('span');
+    expect(wrapper.find('svg').exists()).toBe(true);
+    expect(wrapper.find('svg').attributes('aria-label')).toBe('Facebook');
   });
 
   it('faz fallback para span quando o ícone não existe', () => {
@@ -31,6 +33,7 @@ describe('StIcon', () => {
       props: { name: 'does-not-exist', ariaLabel: 'X' }
     });
     expect(wrapper.element.tagName.toLowerCase()).toBe('span');
+    expect(wrapper.find('svg').exists()).toBe(false);
     expect(wrapper.attributes('aria-label')).toBe('X');
   });
 });
