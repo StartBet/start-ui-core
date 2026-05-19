@@ -6,7 +6,8 @@ export const buildStCardActionGameClasses = () => {
     'absolute bottom-0 right-[-1rem] z-10 opacity-72 object-contain object-bottom';
   const title =
     'relative px-1 max-w-[75%] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] z-20 overflow-hidden';
-  const subtitle = 'relative max-w-[75%] z-20';
+  const subtitle =
+    'relative max-w-[75%] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] z-20 overflow-hidden';
   const button = 'relative mt-ds-2 z-20';
   const buttonEndIcon = '';
 
