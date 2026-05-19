@@ -36,6 +36,12 @@ const casinoLiveImages = byBasename(
     import: 'default'
   })
 );
+const screenImages = byBasename(
+  import.meta.glob('../../../assets/imgs/screens/*', {
+    eager: true,
+    import: 'default'
+  })
+);
 
 const resolveAssetsImageUrl = (
   dir: 'games' | 'casino-live',
@@ -45,6 +51,11 @@ const resolveAssetsImageUrl = (
   return (
     (dir === 'games' ? gameImages[fileName] : casinoLiveImages[fileName]) ?? ''
   );
+};
+
+const resolveScreenImageUrl = (fileName?: string) => {
+  if (!fileName) return '';
+  return screenImages[fileName] ?? '';
 };
 
 const sportsIllustrations = [
@@ -64,8 +75,8 @@ const sportsIllustrations = [
 <template>
   <StPaper
     variant="surface-4"
-    padding="4 2"
-    paddingMd="2 0"
+    padding="4 2 2"
+    paddingMd="4 0 2"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -170,7 +181,7 @@ const sportsIllustrations = [
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
-        bgScreen="fortune-tiger"
+        :bgImage="resolveScreenImageUrl('screen-fortune-tiger.png')"
         illustration="characters/character-fortune-tiger"
       />
       <StCardActionGame
@@ -178,7 +189,7 @@ const sportsIllustrations = [
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
-        bgScreen="fortune-rabbit"
+        :bgImage="resolveScreenImageUrl('screen-fortune-rabbit.png')"
         illustration="characters/character-fortune-rabbit"
       />
       <StCardActionGame
@@ -186,7 +197,7 @@ const sportsIllustrations = [
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
-        bgScreen="aviator"
+        :bgImage="resolveScreenImageUrl('screen-aviator.png')"
         illustration="casino/casino-fly-5"
       />
       <StCardActionGame
@@ -194,7 +205,7 @@ const sportsIllustrations = [
         subtitle="PG Soft"
         buttonText="Jogar"
         to="/"
-        bgScreen="gates-of-olimpus"
+        :bgImage="resolveScreenImageUrl('screen-gates-of-olimpus.png')"
         illustration="characters/character-game-zeus-2"
       />
     </StGrid>
@@ -333,7 +344,7 @@ const sportsIllustrations = [
       :size="8"
       weight="extrabold"
       lineHeight="tight"
-      className="mb-ds-2"
+      className="mb-ds-4"
       >Esportes</StTypography
     >
     <StGrid
@@ -349,7 +360,7 @@ const sportsIllustrations = [
         subtitle="Campeonato Espanhol"
         buttonText="Jogar"
         to="/"
-        bgScreen="soccer"
+        :bgImage="resolveScreenImageUrl('screen-soccer.png')"
         illustration="pixar/pixar-barcelona"
       />
       <StCardActionGame
@@ -357,7 +368,7 @@ const sportsIllustrations = [
         subtitle="Tudo que acontece na NBA"
         buttonText="Jogar"
         to="/"
-        bgScreen="basketball"
+        :bgImage="resolveScreenImageUrl('screen-basketball.png')"
         illustration="pixar/pixar-okc"
       />
       <StCardActionGame
@@ -365,7 +376,7 @@ const sportsIllustrations = [
         subtitle="Campeonato Brasileiro de Futebol"
         buttonText="Jogar"
         to="/"
-        bgScreen="soccer"
+        :bgImage="resolveScreenImageUrl('screen-soccer.png')"
         illustration="pixar/pixar-santos"
       />
     </StGrid>
