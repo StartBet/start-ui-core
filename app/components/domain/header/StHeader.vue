@@ -54,12 +54,14 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
           <StTooltip placement="bottom">
             <template #trigger>
               <span class="relative inline-flex">
-                <StButton
-                  variant="text"
-                  color="secondary"
-                  iconLeft="Gift"
-                  aria-label="Promoções"
-                />
+                <NuxtLink to="/promocoes" aria-label="Promoções">
+                  <StButton
+                    variant="text"
+                    color="secondary"
+                    iconLeft="Gift"
+                    aria-label="Promoções"
+                  />
+                </NuxtLink>
                 <StBadge
                   variant="negative"
                   pulse
