@@ -243,8 +243,8 @@ const sportsIllustrations = [
 
   <StPaper
     variant="surface-4"
-    padding="4 2"
-    paddingMd="2 0"
+    padding="6 2"
+    paddingMd="4 0"
     borderRadius="none"
     class="max-w-ds-144 m-auto flex flex-col items-start justify-center"
     :elevation="0"
@@ -254,7 +254,7 @@ const sportsIllustrations = [
       smCols="5"
       mdCols="10"
       lgCols="10"
-      gap="8"
+      gap="4"
       className="w-full"
     >
       <div
@@ -266,7 +266,7 @@ const sportsIllustrations = [
           :name="item.name"
           :alt="item.title"
           :title="item.title"
-          width="auto"
+          width="5"
         />
         <StTypography
           as="h4"
