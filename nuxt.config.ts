@@ -22,6 +22,11 @@ export default defineNuxtConfig({
           name: 'esportes',
           path: '/esportes',
           file: '~/pages/esportes/esportes.vue'
+        },
+        {
+          name: 'promocoes',
+          path: '/promocoes',
+          file: '~/pages/promocoes/promocoes.vue'
         }
       );
     }
