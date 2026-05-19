@@ -417,6 +417,17 @@ export default {
         'action-hover': '0 0 16px 2px var(--color-shadow-hover)',
         'action-pressed': '0 0 16px 4px var(--color-shadow-pressed)'
       },
+
+      dropShadow: {
+        'action-hover': [
+          '0 0 8px var(--color-shadow-hover)',
+          '0 0 16px var(--color-shadow-hover)'
+        ],
+        'action-pressed': [
+          '0 0 16px var(--color-shadow-pressed)',
+          '0 0 24px var(--color-shadow-pressed)'
+        ]
+      },
       spacing: {
         'ds-1': '8px',
         'ds-2': '16px',
@@ -451,7 +462,9 @@ export default {
       textShadow: {
         'ds-small': '-1px 1px transparent, -2px 2px var(--shadow-scale-950)',
         'ds-medium': '-1px 1px transparent, -3px 3px var(--shadow-scale-950)',
-        'ds-large': '-2px 2px transparent, -4px 4px var(--shadow-scale-950)'
+        'ds-large': '-2px 2px transparent, -4px 4px var(--shadow-scale-950)',
+        'action-hover': '0 0 16px var(--color-shadow-hover)',
+        'action-pressed': '0 0 16px var(--color-shadow-pressed)'
       }
     }
   },

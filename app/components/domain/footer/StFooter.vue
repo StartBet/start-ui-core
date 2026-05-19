@@ -88,12 +88,15 @@ const brandIllustrationName = computed(() =>
       >
         <StGrid cols="1" mdCols="2" gap="2" mdGap="0" padding="none">
           <div class="flex flex-col items-start gap-ds-4">
-            <StIllustration
-              :name="brandIllustrationName"
-              alt="Brand"
-              height="5"
-            />
-            <div class="flex gap-ds-1">
+            <NuxtLink to="/" aria-label="Home">
+              <StIllustration
+                :name="brandIllustrationName"
+                alt="Brand"
+                height="5"
+                className="transition-all duration-200 ease-in-out hover:drop-shadow-action-hover active:drop-shadow-action-pressed"
+              />
+            </NuxtLink>
+            <div class="flex flex-wrap gap-ds-1">
               <StButton
                 color="primary"
                 variant="outline"

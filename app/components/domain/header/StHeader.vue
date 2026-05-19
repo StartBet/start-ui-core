@@ -49,6 +49,7 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
               :name="brandIllustrationName"
               alt="Brand"
               height="3"
+              className="transition-all duration-200 ease-in-out hover:drop-shadow-action-hover active:drop-shadow-action-pressed"
             />
           </NuxtLink>
           <StTooltip placement="bottom">
