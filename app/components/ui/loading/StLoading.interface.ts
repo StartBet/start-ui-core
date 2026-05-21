@@ -18,6 +18,5 @@ export interface StLoadingProps {
   variant?: StLoadingVariant;
   size?: StLoadingSize;
   value?: StLoadingValue;
-  fullscreen?: boolean;
   className?: string;
 }

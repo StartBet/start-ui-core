@@ -16,7 +16,6 @@ const props = withDefaults(defineProps<StLoadingProps>(), {
   type: 'arrow',
   variant: 'primary',
   size: '8',
-  fullscreen: false,
   value: 0,
   className: ''
 });
