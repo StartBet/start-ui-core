@@ -21,6 +21,10 @@ vi.mock('~/components/domain/footer/StFooter.vue', () => ({
   default: { template: '<footer data-test="footer" />' }
 }));
 
+vi.mock('~/components/domain/loading-screen/StLoadingScreen.vue', () => ({
+  default: { template: '<div data-test="loading-screen" />' }
+}));
+
 import DefaultLayout from './DefaultLayout.vue';
 
 describe('DefaultLayout', () => {
