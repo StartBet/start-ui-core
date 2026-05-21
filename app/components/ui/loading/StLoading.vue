@@ -65,7 +65,7 @@ const cyclicalOffset = computed(
 <template>
   <span :class="classes.content" aria-busy="true" aria-live="polite">
     <StIllustration
-      v-if="props.type === 'arrow'"
+      v-if="props.size !== '3' || props.type === 'arrow'"
       :name="illustrationName"
       :alt="`Loading ${props.variant}`"
       :width="illustrationSize"
@@ -74,7 +74,7 @@ const cyclicalOffset = computed(
     />
 
     <span
-      v-else-if="props.type === 'spinner'"
+      v-if="props.type === 'spinner'"
       :class="classes.spinner"
       aria-hidden="true"
     />

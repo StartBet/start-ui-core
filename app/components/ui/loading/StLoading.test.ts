@@ -39,7 +39,7 @@ describe('StLoading', () => {
 
   it('renderiza spinner', () => {
     const wrapper = mount(StLoading, {
-      props: { type: 'spinner' }
+      props: { type: 'spinner', size: '3' }
     });
     expect(wrapper.find('img').exists()).toBe(false);
     expect(wrapper.find('.animate-spinner-infinite').exists()).toBe(true);
