@@ -555,6 +555,11 @@
     --color-surface-positive: var(--positive-color-200);
     --color-surface-negative: var(--negative-color-200);
 
+    --color-surface-shadow-0: var(--shadow-scale-500);
+    --color-surface-shadow-1: var(--shadow-scale-600);
+    --color-surface-shadow-2: var(--shadow-scale-700);
+    --color-surface-shadow-3: var(--shadow-scale-800);
+
     --color-content-default: var(--neutral-color-800);
     --color-content-disable: var(--neutral-color-700);
     --color-content-ghost: var(--neutral-color-400);
@@ -605,6 +610,11 @@
     --color-surface-2: var(--brand-primary-900);
     --color-surface-3: var(--brand-primary-950);
     --color-surface-4: var(--brand-primary-950);
+
+    --color-surface-shadow-0: var(--shadow-scale-500);
+    --color-surface-shadow-1: var(--shadow-scale-600);
+    --color-surface-shadow-2: var(--shadow-scale-700);
+    --color-surface-shadow-3: var(--shadow-scale-800);
 
     --color-surface-primary: var(--brand-primary-950);
     --color-surface-secondary: var(--brand-secondary-800);

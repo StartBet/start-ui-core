@@ -68,6 +68,12 @@ export default {
           2: 'var(--color-surface-2)',
           3: 'var(--color-surface-3)',
           4: 'var(--color-surface-4)',
+          shadow: {
+            0: 'var(--color-surface-shadow-0)',
+            1: 'var(--color-surface-shadow-1)',
+            2: 'var(--color-surface-shadow-2)',
+            3: 'var(--color-surface-shadow-3)'
+          },
           primary: 'var(--color-surface-primary)',
           secondary: 'var(--color-surface-secondary)',
           info: 'var(--color-surface-info)',
@@ -465,6 +471,62 @@ export default {
         'ds-large': '-2px 2px transparent, -4px 4px var(--shadow-scale-950)',
         'action-hover': '0 0 16px var(--color-shadow-hover)',
         'action-pressed': '0 0 16px var(--color-shadow-pressed)'
+      },
+      keyframes: {
+        'loading-arrow': {
+          '0%': {
+            transform: 'translateX(-200%)'
+          },
+          '33%': {
+            transform: 'translateX(0%)'
+          },
+          '66%': {
+            transform: 'translateX(0%)'
+          },
+          '100%': {
+            transform: 'translateX(200%)'
+          }
+        },
+        's10-1': {
+          '0%': {
+            clipPath: 'polygon(50% 50%,0 0,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%)'
+          },
+          '12.5%': {
+            clipPath:
+              'polygon(50% 50%,0 0,50% 0%,100% 0%,100% 0%,100% 0%,100% 0%)'
+          },
+          '25%': {
+            clipPath:
+              'polygon(50% 50%,0 0,50% 0%,100% 0%,100% 100%,100% 100%,100% 100%)'
+          },
+          '50%': {
+            clipPath:
+              'polygon(50% 50%,0 0,50% 0%,100% 0%,100% 100%,50% 100%,0% 100%)'
+          },
+          '62.5%': {
+            clipPath:
+              'polygon(50% 50%,100% 0,100% 0%,100% 0%,100% 100%,50% 100%,0% 100%)'
+          },
+          '75%': {
+            clipPath:
+              'polygon(50% 50%,100% 100%,100% 100%,100% 100%,100% 100%,50% 100%,0% 100%)'
+          },
+          '100%': {
+            clipPath:
+              'polygon(50% 50%,50% 100%,50% 100%,50% 100%,50% 100%,50% 100%,0% 100%)'
+          }
+        },
+        's10-2': {
+          '0%': { transform: 'scaleY(1) rotate(0deg)' },
+          '49.9%': { transform: 'scaleY(1) rotate(135deg)' },
+          '50%': { transform: 'scaleY(-1) rotate(0deg)' },
+          '100%': { transform: 'scaleY(-1) rotate(-135deg)' }
+        }
+      },
+      animation: {
+        'loading-arrow': 'loading-arrow 1.5s ease-in-out infinite',
+        'spinner-infinite':
+          's10-1 0.8s infinite linear alternate, s10-2 1.6s linear infinite'
       }
     }
   },
