@@ -1,20 +1,30 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useModalStore } from '~/stores/modalStore';
 import StLoginModal from '~/components/domain/modals/login/StLoginModal.vue';
+import StRegisterModal from '~/components/domain/modals/register/StRegisterModal.vue';
 
 defineOptions({ name: 'StModalHost' });
 
 const modal = useModalStore();
-
-const isLoginOpen = computed(() => modal.active === 'login');
-
-const setLoginOpen = (value: boolean) => {
-  if (value) modal.open('login');
-  else modal.close();
-};
 </script>
 
 <template>
-  <StLoginModal :open="isLoginOpen" @update:open="setLoginOpen" />
+  <StLoginModal
+    v-if="modal.active === 'login'"
+    :open="true"
+    @update:open="
+      (v) => {
+        if (!v) modal.close();
+      }
+    "
+  />
+  <StRegisterModal
+    v-else-if="modal.active === 'register'"
+    :open="true"
+    @update:open="
+      (v) => {
+        if (!v) modal.close();
+      }
+    "
+  />
 </template>
