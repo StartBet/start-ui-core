@@ -19,7 +19,11 @@ const variantClasses: Record<PaperVariant, string> = {
   'surface-warning': 'bg-surface-warning',
   'surface-positive': 'bg-surface-positive',
   'surface-negative': 'bg-surface-negative',
-  'surface-primary': 'bg-surface-primary'
+  'surface-primary': 'bg-surface-primary',
+  'surface-shadow-0': 'bg-surface-shadow-0',
+  'surface-shadow-1': 'bg-surface-shadow-1',
+  'surface-shadow-2': 'bg-surface-shadow-2',
+  'surface-shadow-3': 'bg-surface-shadow-3'
 };
 
 const borderClasses: Record<PaperBorder, string> = {
