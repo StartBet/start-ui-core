@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
   components: [{ path: '~/components', pathPrefix: false }],
+  app: {
+    teleportId: 'modal-root'
+  },
   hooks: {
     'pages:extend'(pages) {
       pages.splice(0, pages.length);
