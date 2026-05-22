@@ -5,6 +5,7 @@ import StHeader from '~/components/domain/header/StHeader.vue';
 import StFooter from '~/components/domain/footer/StFooter.vue';
 import StNavbar from '~/components/domain/navbar/StNavbar.vue';
 import StLoadingScreen from '~/components/domain/loading-screen/StLoadingScreen.vue';
+import StModalHost from '~/components/domain/modal-host/StModalHost.vue';
 import {
   defaultLayoutMainClass,
   defaultLayoutRootClass,
@@ -57,5 +58,6 @@ if (globalThis.window !== undefined) {
         <StFooter v-if="!isRouteLoading" />
       </div>
     </div>
+    <StModalHost />
   </div>
 </template>

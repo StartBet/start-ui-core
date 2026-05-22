@@ -25,6 +25,10 @@ vi.mock('~/components/domain/loading-screen/StLoadingScreen.vue', () => ({
   default: { template: '<div data-test="loading-screen" />' }
 }));
 
+vi.mock('~/components/domain/modal-host/StModalHost.vue', () => ({
+  default: { template: '<div data-test="modal-host" />' }
+}));
+
 import DefaultLayout from './DefaultLayout.vue';
 
 describe('DefaultLayout', () => {

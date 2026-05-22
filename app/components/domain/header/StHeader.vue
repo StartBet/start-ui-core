@@ -8,6 +8,7 @@ import StPaper from '~/components/ui/paper/StPaper.vue';
 import StTooltip from '~/components/ui/tooltip/StTooltip.vue';
 import { useThemeService } from '~/services/themeService';
 import { useSideNavStore } from '~/stores/sideNavStore';
+import { useModalStore } from '~/stores/modalStore';
 import { stHeaderRootClass } from '~/components/domain/header/styleStHeader';
 
 defineOptions({ name: 'StHeader' });
@@ -24,6 +25,7 @@ const menuAriaLabel = computed(() =>
   sideNav.isOpen ? 'Fechar menu' : 'Abrir menu'
 );
 const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
+const modal = useModalStore();
 </script>
 
 <template>
@@ -80,6 +82,7 @@ const menuVariant = computed(() => (sideNav.isOpen ? 'secondary' : 'primary'));
             variant="text"
             iconLeft="right-to-bracket"
             className="hidden md:block"
+            @click="modal.open('login')"
             >Entrar</StButton
           >
           <StButton
