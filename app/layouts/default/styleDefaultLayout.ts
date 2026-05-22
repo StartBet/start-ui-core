@@ -7,4 +7,4 @@ export const defaultLayoutShellClass =
 export const defaultLayoutTemplateClass =
   'min-w-0 flex-1 overflow-y-auto pl-0 md:pl-ds-8 xl:pl-0';
 
-export const defaultLayoutMainClass = 'min-h-full';
+export const defaultLayoutMainClass = 'h-full w-full min-h-[fit-content]';
