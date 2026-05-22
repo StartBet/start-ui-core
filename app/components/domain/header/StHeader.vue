@@ -90,6 +90,7 @@ const modal = useModalStore();
             color="secondary"
             iconLeft="user-plus"
             className="hidden md:block"
+            @click="modal.open('register')"
             >Cadastrar</StButton
           >
           <StButton
@@ -98,6 +99,7 @@ const modal = useModalStore();
             aria-label="Entrar"
             size="small"
             className="block md:hidden"
+            @click="modal.open('login')"
           />
           <StButton
             variant="solid"
@@ -106,6 +108,7 @@ const modal = useModalStore();
             aria-label="Cadastrar"
             size="small"
             className="block md:hidden"
+            @click="modal.open('register')"
           />
         </div>
       </StGrid>
