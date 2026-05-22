@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
-export type AppModalName = 'login';
+export type AppModalName = 'login' | 'register';
 
 export const useModalStore = defineStore('modal', () => {
   const active = ref<AppModalName | null>(null);

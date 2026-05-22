@@ -15,6 +15,10 @@ describe('modalStore', () => {
     expect(store.isOpen).toBe(true);
     expect(store.active).toBe('login');
 
+    store.open('register');
+    expect(store.isOpen).toBe(true);
+    expect(store.active).toBe('register');
+
     store.close();
     expect(store.isOpen).toBe(false);
     expect(store.active).toBe(null);
