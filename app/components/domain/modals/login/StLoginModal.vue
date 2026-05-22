@@ -60,16 +60,16 @@ const brandIllustrationName = computed(() =>
       <StInput
         v-model:value="email"
         type="email"
+        icon="user"
         name="email"
         autoComplete="email"
-        placeholder="seuemail@exemplo.com"
+        placeholder="email ou cpf"
       />
       <StInput
         v-model:value="password"
         type="password"
-        name="password"
-        autoComplete="current-password"
-        placeholder="********"
+        icon="lock"
+        placeholder="senha"
       />
       <StTypography as="p" variant="body-small">Esqueceu a senha?</StTypography>
       <StButton variant="solid" color="secondary" @click="close">

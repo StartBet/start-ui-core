@@ -59,18 +59,26 @@ const brandIllustrationName = computed(() =>
         height="3"
         className="transition-all duration-200 ease-in-out hover:drop-shadow-action-hover active:drop-shadow-action-pressed"
       />
-      <StInput v-model:value="cpf" type="text" name="cpf" placeholder="CPF" />
+      <StInput
+        v-model:value="cpf"
+        type="text"
+        icon="user"
+        name="cpf"
+        placeholder="CPF"
+      />
       <StInput
         v-model:value="email"
         type="email"
+        icon="envelope"
         name="email"
         autoComplete="email"
-        placeholder="seuemail@exemplo.com"
+        placeholder="email ou cpf"
       />
       <StInput
         v-model:value="telefone"
         type="tel"
         inputMode="tel"
+        icon="phone"
         name="telefone"
         autoComplete="tel"
         placeholder="Telefone com DDD"
@@ -79,9 +87,8 @@ const brandIllustrationName = computed(() =>
       <StInput
         v-model:value="password"
         type="password"
-        name="password"
-        autoComplete="new-password"
-        placeholder="********"
+        icon="lock"
+        placeholder="senha"
       />
       <StButton variant="solid" color="secondary" @click="close">
         Cadastrar
