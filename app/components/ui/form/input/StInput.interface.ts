@@ -1,11 +1,11 @@
 export type StInputRef = {
-  focus: () => void
-  blur: () => void
-  clear: () => void
-  setInvalidity: () => void
-  setValidity: () => void
-  reportValidity: () => void
-}
+  focus: () => void;
+  blur: () => void;
+  clear: () => void;
+  setInvalidity: () => void;
+  setValidity: () => void;
+  reportValidity: () => void;
+};
 
 export type StInputType =
   | 'text'
@@ -20,9 +20,9 @@ export type StInputType =
   | 'datetime-local'
   | 'month'
   | 'week'
-  | 'time'
+  | 'time';
 
-export type StInputMask = 'phone-br'
+export type StInputMask = 'phone-br' | 'cpf';
 
 export type StInputMode =
   | 'none'
@@ -32,28 +32,28 @@ export type StInputMode =
   | 'email'
   | 'numeric'
   | 'decimal'
-  | 'search'
+  | 'search';
 
 export type StInputProps = {
-  value?: string | number
-  defaultValue?: string | number
-  icon?: string
-  label?: string
-  type?: StInputType
-  mask?: StInputMask
-  messageInfo?: string
-  messageDanger?: string
-  messageSuccess?: string
-  name?: string
-  disabled?: boolean
-  readOnly?: boolean
-  placeholder?: string
-  maxLength?: number
-  min?: string | number
-  max?: string | number
-  autoComplete?: string
-  required?: boolean
-  pattern?: string
-  inputMode?: StInputMode
-  className?: string
-}
+  value?: string | number;
+  defaultValue?: string | number;
+  icon?: string;
+  label?: string;
+  type?: StInputType;
+  mask?: StInputMask;
+  messageInfo?: string;
+  messageDanger?: string;
+  messageSuccess?: string;
+  name?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  placeholder?: string;
+  maxLength?: number;
+  min?: string | number;
+  max?: string | number;
+  autoComplete?: string;
+  required?: boolean;
+  pattern?: string;
+  inputMode?: StInputMode;
+  className?: string;
+};

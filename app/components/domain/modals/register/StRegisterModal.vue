@@ -65,6 +65,7 @@ const brandIllustrationName = computed(() =>
         icon="user"
         name="cpf"
         placeholder="CPF"
+        mask="cpf"
       />
       <StInput
         v-model:value="email"

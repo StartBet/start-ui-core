@@ -5,8 +5,8 @@ import type {
   StInputProps,
   StInputRef
 } from '~/components/ui/form/input/StInput.interface';
+import { applyInputMask } from '~/utils/inputMask';
 import {
-  applyInputMask,
   buildInputClasses,
   getCounterClassName,
   resolveInputType
