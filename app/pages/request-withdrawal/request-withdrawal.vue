@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import {
+  computed,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch
+} from 'vue';
 import { useThemeService } from '~/services/themeService';
 import { requestWithdrawalRootClass } from './styleRequestWithdrawal';
 import StIllustration from '~/components/ui/illustration/StIllustration.vue';
@@ -35,6 +42,22 @@ const queueDurationMs = 60_000;
 const queueTimeoutIds = ref<Array<ReturnType<typeof globalThis.setTimeout>>>(
   []
 );
+
+watch(queuePosition, (value) => {
+  if (value !== 0) return;
+
+  void nextTick(() => {
+    const doc = globalThis.document;
+    if (!doc) return;
+
+    const targetTop = Math.max(
+      doc.body?.scrollHeight ?? 0,
+      doc.documentElement?.scrollHeight ?? 0
+    );
+
+    globalThis.scrollTo?.({ top: targetTop, behavior: 'smooth' });
+  });
+});
 
 onMounted(() => {
   const startValue = queueStartValue.value;

@@ -49,21 +49,27 @@ describe('RequestWithdrawal Page', () => {
     const zE = vi.fn();
     (globalThis as unknown as { zE?: (...args: unknown[]) => void }).zE = zE;
 
+    const previousScrollTo = globalThis.scrollTo;
+    const scrollTo = vi.fn();
+    (
+      globalThis as unknown as { scrollTo?: (...args: unknown[]) => void }
+    ).scrollTo = scrollTo;
+
     vi.useFakeTimers();
     const wrapper = mount(RequestWithdrawal);
     await nextTick();
 
     const initialButton = findSupportButton(wrapper);
     expect(initialButton).not.toBe(undefined);
-    expect(initialButton!.attributes('disabled')).toBeDefined();
+    expect(initialButton?.attributes('disabled')).toBeDefined();
 
     await vi.runAllTimersAsync();
     await nextTick();
 
     const supportButton = findSupportButton(wrapper);
     expect(supportButton).not.toBe(undefined);
-    expect(supportButton!.attributes('disabled')).toBeUndefined();
-    await supportButton!.trigger('click');
+    expect(supportButton?.attributes('disabled')).toBeUndefined();
+    await supportButton?.trigger('click');
 
     expect(zE).toHaveBeenCalledWith(
       'messenger:on',
@@ -72,7 +78,10 @@ describe('RequestWithdrawal Page', () => {
     );
     expect(zE).toHaveBeenCalledWith('messenger', 'show');
     expect(zE).toHaveBeenCalledWith('messenger', 'open');
+    expect(scrollTo).toHaveBeenCalled();
 
+    (globalThis as unknown as { scrollTo?: unknown }).scrollTo =
+      previousScrollTo;
     (globalThis as unknown as { zE?: (...args: unknown[]) => void }).zE =
       undefined;
     vi.useRealTimers();

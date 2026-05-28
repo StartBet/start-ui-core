@@ -34,33 +34,46 @@ export const PANDA_VIDEO_EMBED_ORIGIN = new URL(
   'https://player-vz-5383bdb2-211.tv.pandavideo.com.br/embed/'
 ).origin;
 
+const RELAXED_PANDA_EVENT_ORIGINS = new Set(['', 'null', 'about:blank']);
+
+function isAllowedPandaEventOrigin(origin: string, expectedOrigin: string) {
+  if (!expectedOrigin) return true;
+  if (origin === expectedOrigin) return true;
+
+  const userAgent = globalThis.navigator?.userAgent ?? '';
+  const isHappyDom = userAgent.toLowerCase().includes('happy-dom');
+  return isHappyDom && RELAXED_PANDA_EVENT_ORIGINS.has(origin);
+}
+
+function asRecord(value: unknown): Record<string, unknown> | null {
+  if (value === null || typeof value !== 'object') return null;
+  return value as Record<string, unknown>;
+}
+
+function getVideoIdFromPandaEventData(data: Record<string, unknown>) {
+  return (
+    (typeof data.video === 'string' ? data.video : undefined) ??
+    (typeof data.video_id === 'string' ? data.video_id : undefined) ??
+    (typeof data.videoId === 'string' ? data.videoId : undefined)
+  );
+}
+
 export function isPandaVideoReceiveEvent(
   event: MessageEvent<unknown>,
   options?: { videoId?: string; origin?: string }
 ): event is MessageEvent<PandaVideoReceiveEventData> {
   const expectedOrigin = options?.origin ?? PANDA_VIDEO_EMBED_ORIGIN;
-  if (expectedOrigin && event.origin !== expectedOrigin) {
-    const userAgent = globalThis.navigator?.userAgent ?? '';
-    const isHappyDom = userAgent.toLowerCase().includes('happy-dom');
-    const relaxedOrigins = new Set(['', 'null', 'about:blank']);
-    if (!(isHappyDom && relaxedOrigins.has(event.origin))) return false;
-  }
+  if (!isAllowedPandaEventOrigin(event.origin, expectedOrigin)) return false;
 
-  if (event.data === null || typeof event.data !== 'object') return false;
-  const data = event.data as Record<string, unknown>;
+  const data = asRecord(event.data);
+  if (!data) return false;
 
-  const message = data.message;
-  if (typeof message !== 'string') return false;
+  if (typeof data.message !== 'string') return false;
 
-  if (options?.videoId) {
-    const video =
-      (typeof data.video === 'string' ? data.video : undefined) ??
-      (typeof data.video_id === 'string' ? data.video_id : undefined) ??
-      (typeof data.videoId === 'string' ? data.videoId : undefined);
-    if (video !== options.videoId) return false;
-  }
+  const expectedVideoId = options?.videoId;
+  if (!expectedVideoId) return true;
 
-  return true;
+  return getVideoIdFromPandaEventData(data) === expectedVideoId;
 }
 
 export function buildPandaVideoEmbedSrc(
