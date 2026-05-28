@@ -12,25 +12,31 @@ export default defineNuxtConfig({
       pages.splice(0, pages.length);
       pages.push(
         {
-          name: 'home',
+          name: 'request-withdrawal',
           path: '/',
-          file: '~/pages/home/home.vue'
-        },
-        {
-          name: 'cassino',
-          path: '/cassino',
-          file: '~/pages/cassino/cassino.vue'
-        },
-        {
-          name: 'esportes',
-          path: '/esportes',
-          file: '~/pages/esportes/esportes.vue'
-        },
-        {
-          name: 'promocoes',
-          path: '/promocoes',
-          file: '~/pages/promocoes/promocoes.vue'
+          file: '~/pages/request-withdrawal/request-withdrawal.vue',
+          meta: { layout: 'landing' }
         }
+        // {
+        //   name: 'home',
+        //   path: '/home',
+        //   file: '~/pages/home/home.vue'
+        // },
+        // {
+        //   name: 'cassino',
+        //   path: '/cassino',
+        //   file: '~/pages/cassino/cassino.vue'
+        // },
+        // {
+        //   name: 'esportes',
+        //   path: '/esportes',
+        //   file: '~/pages/esportes/esportes.vue'
+        // },
+        // {
+        //   name: 'promocoes',
+        //   path: '/promocoes',
+        //   file: '~/pages/promocoes/promocoes.vue'
+        // }
       );
     }
   }
