@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { getTitle } from '~/utils/seo-snippets';
-import { useHead } from 'nuxt/app';
 import { useGamesService } from '~/services/gamesService';
 import { useCasinoLiveService } from '~/services/casinoLiveService';
 import StPaper from '~/components/ui/paper/StPaper.vue';
@@ -10,8 +8,6 @@ import StCardActionGame from '~/components/domain/card-action-game/StCardActionG
 import StCardGame from '~/components/domain/card-game/StCardGame.vue';
 import StMiniCardGame from '~/components/domain/mini-card-game/StMiniCardGame.vue';
 import StIllustration from '~/components/ui/illustration/StIllustration.vue';
-
-useHead({ title: getTitle('Principais Jogos') });
 
 const { games: slotsGames } = useGamesService();
 const { games: casinoLiveGames } = useCasinoLiveService();
