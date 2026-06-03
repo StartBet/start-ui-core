@@ -2,7 +2,8 @@ import { mount } from '@vue/test-utils';
 import { describe, expect, it, vi } from 'vitest';
 
 vi.mock('vue-router', () => ({
-  useRoute: () => ({ fullPath: '/' })
+  useRoute: () => ({ fullPath: '/', path: '/' }),
+  useRouter: () => ({ push: vi.fn() })
 }));
 
 vi.mock('~/stores/sideNavStore', () => ({
@@ -27,6 +28,14 @@ vi.mock('~/components/domain/loading-screen/StLoadingScreen.vue', () => ({
 
 vi.mock('~/components/domain/modal-host/StModalHost.vue', () => ({
   default: { template: '<div data-test="modal-host" />' }
+}));
+
+vi.mock('~/components/domain/user-nav/StUserNav.vue', () => ({
+  default: { template: '<aside data-test="user-nav" />' }
+}));
+
+vi.mock('~/components/domain/user-sub-nav/StUserSubNav.vue', () => ({
+  default: { template: '<div data-test="user-sub-nav" />' }
 }));
 
 import DefaultLayout from './DefaultLayout.vue';

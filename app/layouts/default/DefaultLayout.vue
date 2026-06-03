@@ -6,10 +6,13 @@ import StFooter from '~/components/domain/footer/StFooter.vue';
 import StNavbar from '~/components/domain/navbar/StNavbar.vue';
 import StLoadingScreen from '~/components/domain/loading-screen/StLoadingScreen.vue';
 import StModalHost from '~/components/domain/modal-host/StModalHost.vue';
+import StUserNav from '~/components/domain/user-nav/StUserNav.vue';
+import StUserSubNav from '~/components/domain/user-sub-nav/StUserSubNav.vue';
 import {
   defaultLayoutMainClass,
   defaultLayoutRootClass,
   defaultLayoutTemplateClass,
+  defaultLayoutPageClass,
   defaultLayoutShellClass
 } from '~/layouts/default/styleDefaultLayout';
 import { useSideNavStore } from '~/stores/sideNavStore';
@@ -33,7 +36,7 @@ if (globalThis.window !== undefined) {
       if (loadingTimer) clearTimeout(loadingTimer);
       loadingTimer = setTimeout(() => {
         isRouteLoading.value = false;
-      }, 2000);
+      }, 1000);
     }
   );
 }
@@ -53,7 +56,11 @@ if (globalThis.window !== undefined) {
           text="Carregando..."
         />
         <main v-else :class="defaultLayoutMainClass">
-          <slot />
+          <StUserNav />
+          <div :class="defaultLayoutPageClass">
+            <StUserSubNav />
+            <slot />
+          </div>
         </main>
         <StFooter v-if="!isRouteLoading" />
       </div>
