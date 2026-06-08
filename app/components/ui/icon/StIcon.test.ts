@@ -19,10 +19,10 @@ describe('StIcon', () => {
     expect(list).toContain('w-ds-sm');
     expect(list).toContain('h-ds-sm');
     expect(classList(wrapper.find('svg').attributes('class'))).toContain(
-      'w-[80%]'
+      'w-[90%]'
     );
     expect(classList(wrapper.find('svg').attributes('class'))).toContain(
-      'h-[80%]'
+      'h-[90%]'
     );
   });
 

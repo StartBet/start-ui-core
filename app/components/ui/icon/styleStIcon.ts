@@ -29,7 +29,7 @@ export const buildIconClasses = (props: {
     .filter(Boolean)
     .join(' ');
 
-  const glyph = ['block text-current', 'w-[80%] h-[80%]']
+  const glyph = ['block text-current', 'w-[90%] h-[90%]']
     .filter(Boolean)
     .join(' ');
 
