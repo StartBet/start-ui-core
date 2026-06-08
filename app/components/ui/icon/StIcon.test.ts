@@ -16,7 +16,14 @@ describe('StIcon', () => {
     expect(wrapper.find('svg').attributes('aria-label')).toBe('Adicionar');
 
     const list = classList(wrapper.attributes('class'));
-    expect(list).toContain('text-ds-sm');
+    expect(list).toContain('w-ds-sm');
+    expect(list).toContain('h-ds-sm');
+    expect(classList(wrapper.find('svg').attributes('class'))).toContain(
+      'w-[80%]'
+    );
+    expect(classList(wrapper.find('svg').attributes('class'))).toContain(
+      'h-[80%]'
+    );
   });
 
   it('renderiza svg para ícone de brands quando usa prefixo fab:', () => {

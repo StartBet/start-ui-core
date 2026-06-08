@@ -56,7 +56,16 @@ const icon = computed<IconDefinition | undefined>(() => {
 </script>
 
 <template>
-  <span :class="classes" :aria-label="props.ariaLabel" v-bind="$attrs">
-    <FontAwesomeIcon v-if="icon" :icon="icon" :aria-label="props.ariaLabel" />
+  <span
+    :class="classes.container"
+    :aria-label="props.ariaLabel"
+    v-bind="$attrs"
+  >
+    <FontAwesomeIcon
+      v-if="icon"
+      :icon="icon"
+      :class="classes.glyph"
+      :aria-label="props.ariaLabel"
+    />
   </span>
 </template>
