@@ -435,6 +435,18 @@ export default {
         ]
       },
       spacing: {
+        'ds-xs': '0.75rem',
+        'ds-sm': '0.875rem',
+        'ds-base': '1rem',
+        'ds-md': '1.125rem',
+        'ds-lg': '1.25rem',
+        'ds-xl': '1.5rem',
+        'ds-2xl': '1.875rem',
+        'ds-3xl': '2.25rem',
+        'ds-4xl': '3rem',
+        'ds-5xl': '3.75rem',
+        'ds-6xl': '4.5rem',
+        'ds-7xl': '5rem',
         'ds-1': '8px',
         'ds-2': '16px',
         'ds-3': '24px',
