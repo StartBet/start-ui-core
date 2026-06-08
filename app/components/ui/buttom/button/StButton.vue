@@ -66,7 +66,7 @@ const isIconOnly = computed(
   () => !hasDefaultSlot.value && adornmentCount.value === 1
 );
 
-const iconSize = computed(() => (props.size === 'large' ? 3 : 2));
+const iconSize = computed(() => (props.size === 'large' ? 5 : 4));
 
 const iconLeftAriaLabel = computed(() =>
   isIconOnly.value ? 'icon' : 'icon-left'

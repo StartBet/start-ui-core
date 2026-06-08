@@ -60,7 +60,7 @@ const onUserSubNavigate = (to: string) => {
         <template #startAdornment>
           <StIcon
             :name="child.icon"
-            :size="2"
+            :size="4"
             :aria-label="child.ariaLabel"
             className="text-content-secondary"
           />

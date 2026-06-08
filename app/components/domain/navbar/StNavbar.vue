@@ -113,7 +113,7 @@ const compactEntries = computed<CompactEntry[]>(() => {
           <StListItem
             v-for="item in items"
             :key="item.id"
-            size="medium"
+            size="small"
             clickable
             :selected="isActive(item.to)"
             :onClick="item.to ? () => onNavigate(item.to) : undefined"
@@ -129,7 +129,7 @@ const compactEntries = computed<CompactEntry[]>(() => {
             <template #startAdornment>
               <StIcon
                 :name="item.icon"
-                :size="2"
+                :size="4"
                 :aria-label="item.ariaLabel"
                 className="text-content-secondary"
               />
@@ -153,7 +153,7 @@ const compactEntries = computed<CompactEntry[]>(() => {
                 <template #startAdornment>
                   <StIcon
                     :name="child.icon"
-                    :size="2"
+                    :size="4"
                     :aria-label="child.ariaLabel"
                     className="text-content-secondary"
                   />

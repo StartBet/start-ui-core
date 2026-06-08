@@ -57,7 +57,7 @@ const onNavigate = (to: string | undefined) => {
         <template #startAdornment>
           <StIcon
             :name="item.icon"
-            :size="2"
+            :size="4"
             :aria-label="item.ariaLabel"
             className="text-content-secondary"
           />
@@ -76,7 +76,7 @@ const onNavigate = (to: string | undefined) => {
             <template #startAdornment>
               <StIcon
                 :name="child.icon"
-                :size="2"
+                :size="4"
                 :aria-label="child.ariaLabel"
                 className="text-content-secondary"
               />
