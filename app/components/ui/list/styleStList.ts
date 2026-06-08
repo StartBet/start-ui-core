@@ -73,11 +73,10 @@ const getListItemMainClass = (
   }
 
   const dividerClasses = [
-    'border-b border-border-3 rounded-b-none',
+    'border-b border-border-3',
     "before:content-[''] before:absolute before:left-0 before:bottom-[-1px] before:w-full before:h-[2px]",
     'before:bg-secondary before:origin-center before:scale-x-0',
     'before:transition-transform before:duration-300 before:ease-in-out',
-    'after:rounded-b-none',
     scaleClass
   ]
     .filter(Boolean)
@@ -148,11 +147,12 @@ export const buildListItemClasses = (
     mainActionBase,
     'relative appearance-none m-0 border-0 bg-transparent text-left',
     'font-inherit text-inherit cursor-pointer select-none',
+    divider ? 'rounded-b-none' : '',
     options.hasSubItems
       ? 'rounded-r-none before:rounded-r-none after:rounded-r-none'
       : '',
     disabled ? 'pointer-events-none' : '',
-    clickable ? interactionsHoverPressed : ''
+    clickable ? `${interactionsHoverPressed} border-radius-` : ''
   ]
     .filter(Boolean)
     .join(' ');
