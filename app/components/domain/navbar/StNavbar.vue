@@ -165,7 +165,10 @@ const compactEntries = computed<CompactEntry[]>(() => {
         </StUnorderedList>
       </div>
 
-      <div v-show="!sideNav.isOpen" class="hidden md:flex flex-col">
+      <div
+        v-show="!sideNav.isOpen"
+        class="hidden md:flex flex-col items-center"
+      >
         <StTooltip
           v-for="entry in compactEntries"
           :key="entry.key"
