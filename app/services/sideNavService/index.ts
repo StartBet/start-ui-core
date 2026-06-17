@@ -2,6 +2,69 @@ import type { StNavbarItem } from '~/components/domain/navbar/StNavbar.interface
 
 const sideNavItems: StNavbarItem[] = [
   {
+    id: 'promocoes',
+    label: 'Promoções',
+    ariaLabel: 'Promoções',
+    to: '/promocoes',
+    icon: 'gift'
+  },
+  {
+    id: 'esporte',
+    label: 'Esporte',
+    ariaLabel: 'Esporte',
+    to: '/esportes',
+    icon: 'futbol'
+  },
+  {
+    id: 'cassino-ao-vivo',
+    label: 'Cassino ao vivo',
+    ariaLabel: 'Cassino ao vivo',
+    to: '/cassino',
+    icon: 'circle-play'
+  },
+  {
+    id: 'crash-games',
+    label: 'Crash Games',
+    ariaLabel: 'Crash Games',
+    to: '/cassino',
+    icon: 'bomb'
+  },
+  {
+    id: 'slots',
+    label: 'Slots',
+    ariaLabel: 'Slots',
+    to: '/cassino',
+    icon: 'coins'
+  },
+  {
+    id: 'loja',
+    label: 'Loja',
+    ariaLabel: 'Loja',
+    to: '/user/gamification/shop',
+    icon: 'cart-shopping'
+  },
+  {
+    id: 'missoes',
+    label: 'Missões',
+    ariaLabel: 'Missões',
+    to: '/user/gamification/missions',
+    icon: 'bullseye'
+  },
+  {
+    id: 'minigames',
+    label: 'Minigames',
+    ariaLabel: 'Minigames',
+    to: '/user/gamification/mini-games',
+    icon: 'gamepad'
+  },
+  {
+    id: 'torneios',
+    label: 'Torneios',
+    ariaLabel: 'Torneios',
+    to: '/user/gamification/tournaments',
+    icon: 'trophy'
+  },
+  {
     id: 'cassino',
     label: 'Cassino',
     ariaLabel: 'Cassino',
@@ -9,42 +72,25 @@ const sideNavItems: StNavbarItem[] = [
     to: '/cassino',
     children: [
       {
-        id: 'meus-favoritos',
-        label: 'Meus favoritos',
-        ariaLabel: 'Meus favoritos',
-        to: '/cassino',
-        icon: 'Star'
-      },
-      { id: 'slots', label: 'Slots', ariaLabel: 'Slots', icon: 'Coins' },
-      {
-        id: 'cassino-ao-vivo',
-        label: 'Cassino ao vivo',
-        ariaLabel: 'Cassino ao vivo',
-        to: '/cassino',
-        icon: 'Dice'
-      },
-      { id: 'aviator', label: 'Aviator', ariaLabel: 'Aviator', icon: 'Plane' },
-      { id: 'bac-bo', label: 'Bac Bo', ariaLabel: 'Bac Bo', icon: 'Dice' },
-      {
         id: 'fortune-tiger',
         label: 'Fortune Tiger',
         ariaLabel: 'Fortune Tiger',
         to: '/cassino',
         icon: 'Paw'
       },
+      { id: 'aviator', label: 'Aviator', ariaLabel: 'Aviator', icon: 'Plane' },
       {
-        id: 'football-studio',
-        label: 'Football Studio',
-        ariaLabel: 'Football Studio',
-        to: '/cassino',
-        icon: 'Futbol'
+        id: 'gates-of-olympus',
+        label: 'Gates of Olympus',
+        ariaLabel: 'Gates of Olympus',
+        icon: 'bolt'
       },
       {
-        id: 'promocoes',
-        label: 'Promoções',
-        ariaLabel: 'Promoções',
+        id: 'fortune-rabbit',
+        label: 'Fortune Rabbit',
+        ariaLabel: 'Fortune Rabbit',
         to: '/cassino',
-        icon: 'Gift'
+        icon: 'carrot'
       }
     ]
   },
@@ -56,20 +102,6 @@ const sideNavItems: StNavbarItem[] = [
     to: '/esportes',
     chip: { variant: 'secondary', label: 'AO VIVO' },
     children: [
-      {
-        id: 'esporte-ao-vivo',
-        label: 'Esporte ao vivo',
-        ariaLabel: 'Esporte ao vivo',
-        to: '/esportes',
-        icon: 'tower-broadcast'
-      },
-      {
-        id: 'e-sports',
-        label: 'E-Sports',
-        ariaLabel: 'E-Sports',
-        to: '/esportes',
-        icon: 'gamepad'
-      },
       {
         id: 'br-a',
         label: 'Brasileirão série A',
@@ -92,16 +124,30 @@ const sideNavItems: StNavbarItem[] = [
         icon: 'trophy'
       },
       {
-        id: 'fifa',
-        label: 'FIFA',
-        ariaLabel: 'FIFA',
+        id: 'champions-league',
+        label: 'Champions League',
+        ariaLabel: 'Champions League',
+        to: '/esportes',
+        icon: 'star'
+      },
+      {
+        id: 'basketball',
+        label: 'Basquete',
+        ariaLabel: 'Basquete',
+        to: '/esportes',
+        icon: 'basketball'
+      },
+      {
+        id: 'tennis',
+        label: 'Tênis',
+        ariaLabel: 'Tênis',
         to: '/esportes',
         icon: 'trophy'
       },
       {
-        id: 'football-studio',
-        label: 'Football Studio',
-        ariaLabel: 'Football Studio',
+        id: 'voleiball',
+        label: 'Vôlei',
+        ariaLabel: 'Vôlei',
         to: '/esportes',
         icon: 'Futbol'
       }
@@ -112,8 +158,7 @@ const sideNavItems: StNavbarItem[] = [
     label: 'Suporte ao vivo',
     ariaLabel: 'Suporte ao vivo',
     icon: 'Headset'
-  },
-  { id: 'promocoes', label: 'Promoções', ariaLabel: 'Promoções', icon: 'Gift' }
+  }
 ];
 
 export function useSideNavService() {
