@@ -8,6 +8,7 @@ import { TROPHY_ILLUSTRATIONS } from './trophy';
 import { STICKERS_GAME_ILLUSTRATIONS } from './stickers-game';
 import { PIXAR_ILLUSTRATIONS } from './pixar';
 import { SPORTS_ILLUSTRATIONS } from './sports';
+import { LOGO_ILLUSTRATIONS } from './logo';
 
 export const ILLUSTRATIONS = {
   ...ARROWS_ILLUSTRATIONS,
@@ -19,7 +20,8 @@ export const ILLUSTRATIONS = {
   ...CASINO_ILLUSTRATIONS,
   ...STICKERS_GAME_ILLUSTRATIONS,
   ...PIXAR_ILLUSTRATIONS,
-  ...SPORTS_ILLUSTRATIONS
+  ...SPORTS_ILLUSTRATIONS,
+  ...LOGO_ILLUSTRATIONS
 } as const;
 
 export type IllustrationName = keyof typeof ILLUSTRATIONS;
